@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "Master_Thomas_Bryn",
+        "personal_info": {
+            "first_name": "Thomas",
+            "last_name": "Bryn",
+            "username": "Master_Thomas_Bryn",
+            "education": "Master of the Universe",
+            "location": "Madrid, Spain",
+            "occupation": "Warlord",
+            "description": "All about me is to come. Wait for it.",
+            "age": "0"
+        },
+        "avatar_properties": {
+            "char_uri": "models/default_avatar.gltf",
+            "char_material_uri": "models/default_avatar.gltf.mtlx",
+            "assign_shader_top": "pattern",
+            "visible": "head,left_hand,right_hand,left_hand,left_arm,right_arm,shirt,bottom,left_eye_white,right_eye_white",
+            "mouth_visible": "shocked_mouth",
+            "eyebrows_visible": "neutral_eyebrows",
+            "eyes_visible": "right_small_eye,left_small_eye",
+            "hair_visible": "side_part_hair_short",
+            "hair_shader": "0x000000",
+            "eyeball_shader": "0x000000",
+            "mouth_shader": "0x000000",
+            "skin_shader": "0xC89566",
+            "bottom_shader": "0x21B40E",
+            "shirt_shader": "0xE0E0E0",
+            "glasses_visible": "no_glasses",
+            "job_logo_visible": "",
+            "job_logo_shader": "0x000000"
+        }
+    }
+]

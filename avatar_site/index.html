@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WR9WBPE83K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WR9WBPE83K');
+</script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></script>
+-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+  <!-- Css stylesheet-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google fonts/icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Digital Avatar</title>
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
+<script defer src="main.js"></script></head>
+
+<!-- style="background-image: url('images/blur1.png'); background-size: cover" -->
+<!--style="background: linear-gradient(to right, #fcfcfc, #99d2e8 40%, #04487c);"> -->
+
+<body style="background: url('images/blur4.png') no-repeat center center fixed; background-size: cover;">
+
+  <div id="character_info" style="display: none" , data-id="Robert_Lee" , data-first_name="Robert" ,
+    data-last_name="Lee" , data-username="Robert_Lee" , data-location="Toronto, Ontario" ,
+    data-education="Master of Creative Literature" , data-occupation="Rare Book Dealer" , data-age="62" ,
+    data-description="Hi, My name is Robert and I am the owner of a small bookstore in Toronto. I am semi-retired and enjoy collecting classic literature and vintage games. Although I enjoy shopping due to my heart condition I am unable to walk long distances. Instead I prefer to shop online and search through sites to find the ideal product to buy."
+    , data-job_logo_shader="0x000000" , data-job_logo_visible="" , data-character="" , data-char_name="Avatar" ,
+    data-image_path="" , data-icon_path="" data-char_uri="models/default_avatar.gltf" ,
+    data-char_material_uri="models/default_avatar_pattern.mtlx" , data-char_2dimage="" , data-char_2dturntable="" ,
+    data-assign_shader_top="plain" ,
+    data-visible="head,left_hand,right_hand,left_hand,left_arm,right_arm,shirt,bottom,left_eye_white,right_eye_white" ,
+    data-mouth_visible="neutral_mouth" , data-eyes_visible="right_large_eye,left_large_eye" ,
+    data-eyebrows_visible="neutral_eyebrows" , data-hair_visible="middle_part_hair_short" , data-hair_shader="0xE89E63"
+    , data-eyeball_shader="0x000000" , data-mouth_shader="0xEB5757" , data-skin_shader="0xFFC782" ,
+    data-bottom_shader="0x000000" , data-shirt_shader="0x0E93FF" , data-glasses_visible="no_glasses" ,
+    data-background_color="#87CEEB" , data-profile_mode="view">
+  </div>
+
+  <!-- Avatar Navbar-->
+  <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 shadow-sm" style="background-color: #EEEE">
+    <h1 id="profile_header" class="my-0 mr-md-auto text-dark font-weight-bold"></h1>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="../index.html">Home</a>
+      <!--
+      <a id="edit_settings" class="p-2 text-dark" data-toggle="modal" data-target="#settingsDialog">Settings</a>
+      -->
+      <a id="profile_mode" class="p-2 text-dark">Edit Avatar</a>
+
+      <a>|</a>
+
+      <!-- Link to Aero Version -->
+      <!-- Prototype 1 link 
+      <a href="https://adobeaero.app.link/goSW7CgqLub" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a> -->
+      <!-- Prototype 2 link 
+      <a href="https://adobeaero.app.link/hwotnzR5Wub" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>
+      -->  
+      <!-- Prototype 3 link 
+      <a href="https://adobeaero.app.link/uAJKFBODfvb" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>
+      -->                  
+      <!-- Prototype 4 link -->
+      <a href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank" rel="noopener noreferrer">
+        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>          
+
+      <!-- Facebook Share Button -->
+      <a class=" pl-2 fbtn share facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fguannan-kwok.github.io%2FassetLibrary%2Favatar_site%2Findex.html&amp;src=sdkpreparse"><i
+          class="fa fa-facebook"></i></a>
+
+      <!-- Twitter Share Button -->
+      <a class="fbtn share twitter"
+        href="https://twitter.com/intent/tweet?text=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
+          class="fa fa-twitter"></i></a>
+
+      <!-- Pinterest Share Button -->
+      <a class="fbtn share pinterest"
+        href="http://pinterest.com/pin/create/button/?url=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
+          class="fa fa-pinterest"></i></a>
+
+      <!-- LinkedIn Share Button -->
+      <a class="fbtn share linkedin"
+        href="http://www.linkedin.com/shareArticle?url=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
+          class="fa fa-linkedin"></i></a>
+
+    </nav>
+  </div>
+
+  <!-- Customization Options (rows)-->
+  <div class="d-flex flex-column flex-md-row p-2 shadow-sm">
+    <div id="character_div" class="col-sm-6 mx-auto d-block align-items-stretch">
+
+      <!-- 3D character viewport -->
+      <canvas id="character_viewport" class="rounded mx-auto img-fluid d-block" tabindex="1" style="max-width:100%;"
+        data-tooltip2="3D rendering of avatar"></canvas>
+      <!-- <div class="progress">
+      <div id="progress_bar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div> -->
+
+      <!-- Load and save profile and save canvas -->
+      <nav id="load_save_options" class="rounded nav flex-row flex-nowrap align-items-center justify-content-center"
+        style="background-color:white; opacity: 0.85">
+        <div class="col-sm-3">
+          <h4 id="profile_name"></h4>
+        </div>
+
+        <div class="col-sm">
+          <label class="col-form-label">
+            <input id="loadAvatar" type="file" accept=".json" style="display:none" />
+            <img class="img-fluid" src="icons/load2.svg" alt="Load Profile" style="transform: scale(1.0,1.0)">
+          </label>
+        </div>
+
+        <div class="col-sm">
+          <label class="col-form-label">
+            <img class="img-fluid" id="saveAvatar" src="icons/save2.svg" alt="Save Profile"
+              style="transform: scale(1,1)">
+          </label>
+        </div>
+        <div class="col-sm">
+          <label class="col-form-label">
+            <img class="img-fluid" id="saveCanvas" src="icons/screenshot2.svg" alt="Screen shot"
+              style="transform: scale(1,1)">
+          </label>
+        </div>
+
+        <div class="col-sm">
+          <a id="saveAvatarClick" style="display:none"></a>
+          <label class="col-form-label">
+            <img id="playback" class="img-fluid" src="icons/Play2.svg" alt="Turntable" style="transform: scale(1,1)">
+          </label>
+        </div>
+
+        <div class="col-sm">
+          <label class="col-form-label">
+            <input id="background_color" type="color" class="custom_colorbox" />
+            
+          </label>
+        </div>
+      </nav>
+
+    </div>
+
+    <div id="right_side_block" class="p-2 col-sm-6 mx auto d-block">
+
+      <!-- <div class="d-flex align-items-center px-md-4 mb-3 bg-white border-bottom"> -->
+      <div class="row ml-0 d-flex">
+
+        <!---------------------------------------- Profile information items ------------------------------->
+        <div class="container">
+          <div class="p-2 main-info rounded" style="background-color:white; opacity: 0.85">
+            <div class="ml-0 row main-info border-bottom col-sm" data-category="">
+              <p></p>
+              <h6>About</h6>
+              <small id="profile_description">
+              
+              <p></p>
+            </div>
+
+            <div class="ml-0 row main-info col-sm">
+              
+                <p></p>
+                <h6>Demographics</h6>
+                <div class="row col-sm">
+                  <div><b>Username: &nbsp;</b></div>
+                  <div id="profile_user_name"></div>
+                </div>
+                <div class="row col-sm">
+                  <b>Occupation: &nbsp;</b>
+                  <div id="profile_occupation"></div>
+                </div>
+                <div class="row col-sm">
+                  <b>City: &nbsp;</b>
+                  <div id="profile_location"></div>
+                </div>
+                <div class="row col-sm">
+                  <b>Education: &nbsp; </b>
+                  <div id="profile_education"></div>
+                </div>
+              
+              <p></p>
+            </div>
+
+            <div class="btn-group main-info" role="group" aria-label="Basic example">
+              <button type="button" id="customize_avatar" class="btn btn-sm btn-primary">Edit Avatar</button>
+              <a type="button" id="ar_avatar" class="btn btn-sm btn-success"
+              href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank" rel="noopener noreferrer">
+              View Avatar in Aero (AR)</a>
+            </div>            
+          </div>
+
+          <!-- Avatar option items -->
+          <nav id="top_options"
+            class="mr-2 rounded nav nav-pills flex-row flex-nowrap align-items-center justify-content-center border-bottom"
+            style="background-color: white; opacity: 0.85">
+
+            <div class="nav-link nav-link-border active link-color main-option" data-category="overview"
+              onclick="filterSelection('overview')">
+              <img class="img-fluid" src="icons/Overview.svg" data-section="Overview" alt="Overview Image"
+                style="transform: scale(0.8,0.8)">
+            </div>
+
+            <div class="nav-link nav-link-border link-color main-option" data-category="hair"
+              onclick="filterSelection('hair')">
+              <img class="img-fluid" src="icons/Hair.svg" data-section="Customization" alt="Hair Image"
+                style="transform: scale(0.8,0.8)">
+            </div>
+
+            <div class="nav-link nav-link-border link-color main-option" data-category="eyes"
+              onclick="filterSelection('eyes')">
+              <img class="img-fluid" src="icons/Eyes.svg" data-section="Eyes" alt="Eyes Image"
+                style="transform: scale(0.8,0.8)">
+            </div>
+
+            <div class="nav-link nav-link-border link-color main-option" data-category="mouth"
+              onclick="filterSelection('mouth')">
+              <img class="img-fluid" src="icons/Mouth.svg" data-section="Mouth" alt="Mouth Image"
+                style="transform: scale(0.8,0.8)">
+            </div>
+
+            <div class="nav-link nav-link-border link-color main-option" data-category="clothing"
+              onclick="filterSelection('clothing')">
+              <img class="img-fluid" src="icons/Clothing.svg" data-section="Clothing" alt="Clothing Image"
+                style="transform: scale(0.8,0.8)">
+            </div>
+
+            <div class="nav-link nav-link-border link-color main-option" data-category="skin"
+              onclick="filterSelection('skin')">
+              <img class="img-fluid" src="icons/Skin.svg" class="img-fluid btn" data-section="Skin" alt="Skin Image"
+                style="transform: scale(0.8,0.8)">
+            </div>
+
+          </nav>
+
+          <!-- -------------------------------------------- Profile form --------------------------------------------  -->
+
+          <div class="container">
+            <p></p>
+            <div class="row pr-2 ml-0 avatar_option" data-category="overview">
+
+              <form id="nav-overview" class="needs-validation text-light" novalidate>
+
+                <div class="form-group row">
+                  <label for="form_first_name" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control form-control-sm" id="form_first_name"
+                      placeholder="First name" value="" required>
+                  </div>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control form-control-sm" id="form_last_name" placeholder="Last name"
+                      value="" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label for="form_username" class="col-form-label col-form-label-sm">Username</label>
+                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="form_username" placeholder="Username"
+                      value="" aria-describedby="inputGroupPrepend" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="form_location" class="col-sm-2 col-form-label col-form-label-sm">Location</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="form_location" placeholder="Location"
+                      value="" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="form_education" class="col-sm-2 col-form-label col-form-label-sm">Education</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="form_education" placeholder="Education"
+                      value="" required>
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label for="form_occupation" class="col-form-label col-form-label-sm">Occupation</label>
+                  </div>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control form-control-sm" id="form_occupation"
+                      placeholder="Occupation" value="invalid" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="form_description" class="col-sm-2 col-form-label col-form-label-sm">About</label>
+                  <div class="col-sm-9">
+                    <!-- <input type="text" class="form-control form-control-sm" id="form_description" placeholder="About"
+                    value="invalid" required> -->
+                    <textarea class="form-control form-control-sm" id="form_description" rows="3" style="resize: none;"
+                      placeholder="About" value="invalid" required>
+                  </textarea>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <p></p>
+                  <p></p>
+                  <div class="col-sm-9">
+                    <button type="button" id="update_overview_btn" class="btn btn-primary btn-sm">Update
+                      Profile</button>
+                  </div>
+                </div>
+            </div>
+            </form>
+          </div>
+
+          <!-- -------------------------------------------- Hair options --------------------------------------------  -->
+          <div class="row ml-0 avatar_option" data-category="hair">
+            <nav id="nav-hair-style"
+              class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border active hair_visible custom_option"
+                data-category="middle_part_hair_long" onclick="pickOption('middle_part_hair_long', 'hair_visible')">
+                <img class="img-fluid" src="images/long_hair_middle_part.png" data-section="Overview"
+                  alt="Overview Image" style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="middle_part_hair_short"
+                onclick="pickOption('middle_part_hair_short', 'hair_visible')">
+                <img class="img-fluid" src="images/short_hair_middle_part.png" data-section="Customization"
+                  alt="Hair Image" style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active hair_visible custom_option"
+                data-category="side_part_hair_long" onclick="pickOption('side_part_hair_long', 'hair_visible')">
+                <img class="img-fluid" src="images/long_hair_side_part.png" data-section="Overview" alt="Overview Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="side_part_hair_short"
+                onclick="pickOption('side_part_hair_short', 'hair_visible')">
+                <img class="img-fluid" src="images/short_hair_side_part.png" data-section="Customization"
+                  alt="Hair Image" style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="no_hair"
+                onclick="pickOption('no_hair', 'hair_visible')">
+                <img class="img-fluid" src="images//no_hair.png" data-section="Customization" alt="Hair Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="">
+              </div>
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="">
+              </div>
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="hair">
+            <nav id="nav-hair-color"
+              class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border active hair_shader custom_option" data-category="0x000000"
+                onclick="pickOption('0x000000', 'hair_shader')">
+                <img class="img-fluid" src="icons/black.svg" data-section="Overview" alt="Black Hair"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_shader custom_option" data-category="0xE89E63"
+                onclick="pickOption('0xE89E63', 'hair_shader')">
+                <img class="img-fluid" src="icons/brown.svg" data-section="Customization" alt="Brown Hair"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_shader custom_option" data-category="0xE1C7B0"
+                onclick="pickOption('0xE1C7B0', 'hair_shader')">
+                <img class="img-fluid" src="icons/light_brown.svg" data-section="Customization" alt="Light Brown Hair"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_shader custom_option" data-category="0xFFD95D"
+                onclick="pickOption('0xFFD95D', 'hair_shader')">
+                <img class="img-fluid" src="icons/blonde.svg" data-section="Customization" alt="Blonde Hair"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_shader custom_option" data-category="0xEB5757"
+                onclick="pickOption('0xEB5757', 'hair_shader')">
+                <img class="img-fluid" src="icons/red.svg" data-section="Customization" alt="Red Hair"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_shader custom_option" data-category="0xE0E0E0"
+                onclick="pickOption('0xE0E0E0', 'hair_shader')">
+                <img class="img-fluid" src="icons/grey.svg" data-section="Customization" alt="Grey Hair"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="">
+              </div>
+              <div class="nav-link nav-link-border hair_visible custom_option" data-category="">
+              </div>
+
+            </nav>
+          </div>
+
+          <!-- -------------------------------------------- Eye options --------------------------------------------  -->
+          <div class="row ml-0 avatar_option" data-category="eyes">
+            <h6 class="text-center font-weight-bold"></h6>
+            <nav id="nav-eyes" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border active eyes_visible custom_option"
+                data-category="right_large_eye,left_large_eye" data-needbackground="1"
+                onclick="pickOption('right_large_eye,left_large_eye', 'eyes_visible')">
+                <img class="img-fluid" src="icons/Large_Eyes.svg" data-section="Eyes" alt="Large Eyes"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border eyes_visible custom_option"
+                data-category="right_small_eye,left_small_eye" data-needbackground="1"
+                onclick="pickOption('right_small_eye,left_small_eye', 'eyes_visible')">
+                <img class="img-fluid" src="icons/Small_Eyes.svg" data-section="Eyes" alt="Small Eyes"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="eyes">
+            <h6 class="text-center font-weight-bold"></h6>
+
+            <nav id="nav-eyebrow" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-start">
+
+              <div class="nav-link nav-link-border  active eyebrows_visible custom_option" data-needbackground="1"
+                data-category="neutral_eyebrows" onclick="pickOption('neutral_eyebrows', 'eyebrows_visible')">
+                <img class="img-fluid" src="icons/Neutral_Eyebrows.svg" data-section="EyeBrows" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  eyebrows_visible custom_option" data-category="angry_eyebrows"
+                data-needbackground="1" onclick="pickOption('angry_eyebrows', 'eyebrows_visible')">
+                <img class="img-fluid" src="icons/Angry_Eyebrows.svg" data-section="EyeBrows" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  eyebrows_visible custom_option" data-category="surprised_eyebrows"
+                data-needbackground="1" onclick="pickOption('surprised_eyebrows', 'eyebrows_visible')">
+                <img class="img-fluid" src="icons/Suprised_Eyebrows.svg" data-section="EyeBrows" alt="Clothing Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="eyes">
+            <h6 class="text-center font-weight-bold"></h6>
+
+            <nav id="nav-eyebrow" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-start">
+
+              <div class="nav-link nav-link-border  active eyeball_shader custom_option" data-category="0x000000"
+                onclick="pickOption('0x000000', 'eyeball_shader')">
+                <img class="img-fluid" src="icons/black.svg" data-section="Eyes" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  eyeball_shader custom_option" data-category="0xE89E63"
+                onclick="pickOption('0xE89E63', 'eyeball_shader')">
+                <img class="img-fluid" src="icons/brown.svg" data-section="Mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  eyeball_shader custom_option" data-category="0x0E93FF"
+                onclick="pickOption('0x0E93FF', 'eyeball_shader')">
+                <img class="img-fluid" src="icons/blue.svg" data-section="Clothing" alt="Clothing Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  eyeball_shader custom_option" data-category="0x27AE60"
+                onclick="pickOption('0x27AE60', 'eyeball_shader')">
+                <img class="img-fluid" src="icons/green.svg" data-section="Clothing" alt="Clothing Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="eyes">
+            <br>
+            <h6 class="text-left text-light font-weight-bold">Glasses</h6>
+
+            <nav id="nav-glasses" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-start">
+
+              <div class="nav-link nav-link-border active glasses_visible custom_option" data-category="glasses"
+                onclick="pickOption('glasses', 'glasses_visible')">
+                <img class="img-fluid" src="icons/add.svg" data-section="Eyes" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  glasses_visible custom_option" data-category="no_glasses"
+                onclick="pickOption('no_glasses', 'glasses_visible')">
+                <img class="img-fluid" src="icons/remove.svg" data-section="Eyes" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+              <div class="nav-link nav-link-border custom_option">
+                <img class="img-fluid" src="icons/empty.svg" style="transform: scale(1.0,1.0)">
+              </div>
+
+            </nav>
+          </div>
+
+          <!-- -------------------------------------------- Mouth Options  --------------------------------------------  -->
+          <div class="row ml-0 avatar_option" data-category="mouth">
+            <h6 class="text-center font-weight-bold"></h6>
+
+            <nav id="nav-mouth" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="happy_mouth" data-needbackground="1"
+                data-category="happy_mouth" onclick="pickOption('happy_mouth', 'mouth_visible')">
+                <img class="img-fluid" src="icons/Smile.svg" data-section="mouth" alt="Smiling mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="surprised_mouth"
+                data-needbackground="1" data-category="surprised_mouth"
+                onclick="pickOption('surprised_mouth', 'mouth_visible')">
+                <img class="img-fluid" src="icons/Joy.svg" data-section="mouth" alt="Hair Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active mouth_visible custom_option" id="neutral_mouth"
+                data-needbackground="1" data-category="neutral_mouth"
+                onclick="pickOption('neutral_mouth', 'mouth_visible')">
+                <img class="img-fluid" src="icons/Neutral_Mouth.svg" data-section="mouth" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="sad_mouth" data-category="sad_mouth"
+                data-needbackground="1" onclick="pickOption('sad_mouth', 'mouth_visible')">
+                <img class="img-fluid" src="icons/Sad.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="shocked_mouth"
+                data-needbackground="1" data-category="shocked_mouth"
+                onclick="pickOption('shocked_mouth', 'mouth_visible')">
+                <img class="img-fluid" src="icons/Suprised.svg" data-section="mouth" alt="Clothing Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="" data-category="">
+              </div>
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="" data-category="">
+              </div>
+              <div class="nav-link nav-link-border mouth_visible custom_option" id="" data-category="">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="mouth">
+            <h6 class="text-center font-weight-bold"></h6>
+
+            <nav id="nav-mouth-color"
+              class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border mouth_shader custom_option" id="pink" data-category="0xFFC8C8"
+                onclick="pickOption('0xFFC8C8', 'mouth_shader')">
+                <img class="img-fluid" src="icons/pink.svg" data-section="mouth" alt="Pink mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border mouth_shader custom_option" id="red" data-category="0xEB5757"
+                onclick="pickOption('0xEB5757', 'mouth_shader')">
+                <img class="img-fluid" src="icons/red.svg" data-section="mouth" alt="Red mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active mouth_shader custom_option" id="black"
+                data-category="0x000000" onclick="pickOption('0x000000', 'mouth_shader')">
+                <img class="img-fluid" src="icons/black.svg" data-section="mouth" alt="Black mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border  mouth_shader custom_option" id="brown" data-category="0xE89E63 "
+                onclick="pickOption('0xE89E63 ', 'mouth_shader')">
+                <img class="img-fluid" src="icons/brown.svg" data-section="mouth" alt="Brown mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border mouth_shader custom_option" id="" data-category=" ">
+              </div>
+              <div class="nav-link nav-link-border mouth_shader custom_option" id="" data-category=" ">
+              </div>
+              <div class="nav-link nav-link-border mouth_shader custom_option" id="" data-category=" ">
+              </div>
+              <div class="nav-link nav-link-border mouth_shader custom_option" id="" data-category=" ">
+              </div>
+
+            </nav>
+          </div>
+
+          <!-- -------------------------------------------- Clothing Options  --------------------------------------------  -->
+
+          <div class="row ml-0 avatar_option" data-category="clothing">
+            <h6 class="text-center text-light font-weight-bold">Shirt</h6>
+
+            <nav id="nav-cloth-pattern"
+              class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link active nav-link-border assign_shader_top custom_option" id="plain"
+                data-needbackground="1" data-category="plain" onclick="pickOption('plain', 'assign_shader_top')">
+                <img class="img-fluid" src="icons/plain.svg" data-section="mouth" alt="Plain Top"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="checker" data-category="checker"
+                data-needbackground="1" onclick="pickOption('checker', 'assign_shader_top')">
+                <img class="img-fluid" src="icons/checker.svg" data-section="mouth" alt="Checker Top"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="striped" data-category="striped"
+                data-needbackground="1" onclick="pickOption('striped', 'assign_shader_top')">
+                <img class="img-fluid" src="icons/striped.svg" data-section="mouth" alt="Stripe Top"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="pattern" data-category="pattern"
+                data-needbackground="1" onclick="pickOption('pattern', 'assign_shader_top')">
+                <img class="img-fluid" src="icons/pattern.svg" data-section="mouth" alt="Patterned Top"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="" data-category="pattern">
+              </div>
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="" data-category="pattern">
+              </div>
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="" data-category="pattern">
+              </div>
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="" data-category="pattern">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="clothing">
+            <h6 class="text-center font-weight-bold"></h6>
+
+            <nav id="nav-cloth-color"
+              class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border shirt_shader custom_option" id="blue" data-category="0xE93FF"
+                onclick="pickOption('0x0E93FF', 'shirt_shader')">
+                <img class="img-fluid" src="icons/blue.svg" data-section="mouth" alt="Smiling mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border shirt_shader custom_option" id="red" data-category="0xEB5757"
+                onclick="pickOption('0xEB5757', 'shirt_shader')">
+                <img class="img-fluid" src="icons/red.svg" data-section="mouth" alt="Hair Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active shirt_shader custom_option" id="orange"
+                data-category="0xF2994A" onclick="pickOption('0xF2994A', 'shirt_shader')">
+                <img class="img-fluid" src="icons/Orange.svg" data-section="mouth" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border shirt_shader custom_option" id="green" data-category="0x21B40E"
+                onclick="pickOption('0x21B40E', 'shirt_shader')">
+                <img class="img-fluid" src="icons/green.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border shirt_shader custom_option" id="yellow" data-category="0xFFD95D"
+                onclick="pickOption('0xFFD95D', 'shirt_shader')">
+                <img class="img-fluid" src="icons/yellow_icon.svg" data-section="mouth" alt="Yellow Shirt"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border shirt_shader custom_option" id="black" data-category="0x000000"
+                onclick="pickOption('0x000000', 'shirt_shader')">
+                <img class="img-fluid" src="icons/black.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border shirt_shader custom_option" id="grey" data-category="0xE0E0E0"
+                onclick="pickOption('0xE0E0E0', 'shirt_shader')">
+                <img class="img-fluid" src="icons/grey.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="" data-category="pattern">
+              </div>
+
+            </nav>
+          </div>
+
+          <div class="row ml-0 avatar_option" data-category="clothing">
+            <h6 class="text-light text-center font-weight-bold">Pants</h6>
+
+            <nav id="nav-bottom-color"
+              class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border bottom_shader custom_option" id="blue" data-category="0xE93FF"
+                onclick="pickOption('0x0E93FF', 'bottom_shader')">
+                <img class="img-fluid" src="icons/blue.svg" data-section="mouth" alt="Smiling mouth"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border bottom_shader custom_option" id="red" data-category="0xEB5757"
+                onclick="pickOption('0xEB5757', 'bottom_shader')">
+                <img class="img-fluid" src="icons/red.svg" data-section="mouth" alt="Hair Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active bottom_shader custom_option" id="orange"
+                data-category="0xF2994A" onclick="pickOption('0xF2994A', 'bottom_shader')">
+                <img class="img-fluid" src="icons/Orange.svg" data-section="mouth" alt="Eyes Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border bottom_shader custom_option" id="green" data-category="0x21B40E"
+                onclick="pickOption('0x21B40E', 'bottom_shader')">
+                <img class="img-fluid" src="icons/green.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border bottom_shader custom_option" id="yellow" data-category="0xFFD95D"
+                onclick="pickOption('0xFFD95D', 'bottom_shader')">
+                <img class="img-fluid" src="icons/yellow_icon.svg" data-section="mouth" alt="Yellow Bottom"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border bottom_shader custom_option" id="black" data-category="0x000000"
+                onclick="pickOption('0x000000', 'bottom_shader')">
+                <img class="img-fluid" src="icons/black.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border bottom_shader custom_option" id="grey" data-category="0xE0E0E0"
+                onclick="pickOption('0xE0E0E0', 'bottom_shader')">
+                <img class="img-fluid" src="icons/grey.svg" data-section="mouth" alt="Mouth Image"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+              <div class="nav-link nav-link-border assign_shader_top custom_option" id="" data-category="pattern">
+              </div>
+
+            </nav>
+          </div>
+
+          <!-- -------------------------------------------- Employee Clothing Options  --------------------------------------------  -->
+
+          <div class="row ml-0 avatar_option" id="nav-logo-color" data-category="clothing">
+            <h6 class="text-center font-weight-bold"> Logo Color</h6>
+
+            <nav class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border job_logo_shader custom_option" id="blue" data-category="0xE93FF"
+                onclick="pickOption('0x0E93FF', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/blue.svg" data-section="logo" alt="Blue"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border job_logo_shader custom_option" id="red" data-category="0xEB5757"
+                onclick="pickOption('0xEB5757', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/red.svg" data-section="logo" alt="Red"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border job_logo_shader custom_option" id="orange" data-category="0xF2994A"
+                onclick="pickOption('0xF2994A', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/Orange.svg" data-section="logo" alt="Orange"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border job_logo_shader custom_option" id="green" data-category="0x21B40E"
+                onclick="pickOption('0x21B40E', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/green.svg" data-section="logo" alt="Green"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border job_logo_shader custom_option" id="yellow" data-category="0xFFD95D"
+                onclick="pickOption('0xFFD95D', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/yellow_icon.svg" data-section="logo" alt="Yellow"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active job_logo_shader custom_option" id="black"
+                data-category="0x000000" onclick="pickOption('0x000000', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/black.svg" data-section="logo" alt="Black"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border job_logo_shader custom_option" id="grey" data-category="0xE0E0E0"
+                onclick="pickOption('0xE0E0E0', 'job_logo_shader')">
+                <img class="img-fluid" src="icons/grey.svg" data-section="logo" alt="Grey"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+            </nav>
+          </div>
+
+          <!-- -------------------------------------------- Skin Options  --------------------------------------------  -->
+
+          <div class="row ml-0 avatar_option" data-category="skin">
+            <h6 class="text-center font-weight-bold"></h6>
+
+            <nav id="nav-skin" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
+
+              <div class="nav-link nav-link-border skin_shader custom_option" id="black_2" data-category="0x645959"
+                onclick="pickOption('0x645959', 'skin_shader')">
+                <img class="img-fluid" src="icons/black_2.svg" data-section="mouth" alt="Skin color"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border skin_shader  custom_option" id="brown_2" data-category="0x744B26 "
+                onclick="pickOption('0x744B26 ', 'skin_shader')">
+                <img class="img-fluid" src="icons/brown_2.svg" data-section="mouth" alt="Skin color"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border active skin_shader  custom_option" id="light_brown_2"
+                data-category="0xC89566" onclick="pickOption('0xC89566', 'skin_shader')">
+                <img class="img-fluid" src="icons/light_brown_2.svg" data-section="mouth" alt="Skin color"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border skin_shader  custom_option" id="tan" data-category="0xFFC782"
+                onclick="pickOption('0xFFC782', 'skin_shader')">
+                <img class="img-fluid" src="icons/tan.svg" data-section="mouth" alt="Skin color"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border skin_shader  custom_option" id="yellow" data-category="0xFFEAAB"
+                onclick="pickOption('0xFFEAAB', 'skin_shader')">
+                <img class="img-fluid" src="icons/yellow.svg" data-section="mouth" alt="Skin color"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border skin_shader  custom_option" id="peach" data-category="0xFFDDBE "
+                onclick="pickOption('0xFFDDBE ', 'skin_shader')">
+                <img class="img-fluid" src="icons/peach.svg" data-section="mouth" alt="Skin color"
+                  style="transform: scale(0.9,0.9)">
+              </div>
+
+              <div class="nav-link nav-link-border skin_shader  custom_option" id="" data-category=" ">
+              </div>
+              <div class="nav-link nav-link-border skin_shader  custom_option" id="" data-category=" ">
+              </div>
+
+
+            </nav>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!----------------------- Settings Dialog ----------------------------->
+      <div class="modal fade" id="settingsDialog" tabindex="-1" role="dialog" aria-labelledby="settingsDialogLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="settingsDialogLabel">Settings</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- TODO : add options here -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-sm btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- -------------------------------------------- UI Logic  --------------------------------------------  -->
+
+      <script>
+        let employee_logo = new URLSearchParams(document.location.search).get("employee_logo");
+        if (!employee_logo) {
+          employee_logo = "";
+        }
+        //console.log("employee_logo: " + employee_logo);
+        var charInfo = document.getElementById("character_info");
+        if (charInfo) {
+          charInfo.dataset.job_logo_visible = employee_logo;
+        }
+
+        updateProfileMode();
+        updateProfileDescription(true);
+        filterSelection("")
+        var charInfo = document.getElementById("character_info");
+        pickOption(charInfo.dataset.assign_shader_top, 'assign_shader_top');
+        pickOption(charInfo.dataset.mouth_visible, 'mouth_visible');
+        pickOption(charInfo.dataset.eyes_visible, 'eyes_visible');
+        pickOption(charInfo.dataset.glasses_visible, 'glasses_visible');
+        pickOption(charInfo.dataset.eyebrows_visible, 'eyebrows_visible');
+        pickOption(charInfo.dataset.hair_visible, 'hair_visible');
+        pickOption(charInfo.dataset.hair_shader, 'hair_shader');
+        pickOption(charInfo.dataset.shirt_shader, 'shirt_shader');
+        pickOption(charInfo.dataset.bottom_shader, 'bottom_shader');
+        pickOption(charInfo.dataset.skin_shader, 'skin_shader');
+        pickOption(charInfo.dataset.eyeball_shader, 'eyeball_shader');
+        pickOption(charInfo.dataset.mouth_shader, 'mouth_shader');
+
+        function pickOption(choice, option) {
+          items = document.getElementsByClassName(option);
+          for (item of items) {
+            var item_category = item.dataset.category;
+            if (item_category == choice) {
+              item.classList.add("active");
+              if (item.dataset.needbackground) {
+                item.style.background = 'skyblue';
+                item.style.opacity = 1.0;
+              }
+            }
+            else {
+              item.classList.remove("active");
+              if (item.dataset.needbackground) {
+                item.style.background = 'white';
+                item.style.opacity = 0.85;
+              }
+            }
+          }
+
+          var charInfo = document.getElementById("character_info");
+          if (charInfo) {
+            //console.log(">>> Change option: ", 'data-' + option, " to ",  choice);
+            charInfo.setAttribute('data-' + option, choice);
+          }
+        }
+
+        function filterSelection(filterCategory) {
+          var items, i;
+          items = document.getElementsByClassName("avatar_option");
+          for (item of items) {
+            var category = item.dataset.category;
+            if (filterCategory == category) {
+              if (item.id == "nav-logo-color") {
+                var charInfo = document.getElementById("character_info");
+                if (charInfo) {
+                  if (charInfo.dataset.job_logo_visible == "") {
+                    item.style.display = "none";
+                  }
+                  else {
+                    item.style.display = "block";
+                  }
+                }
+              }
+              else {
+                item.style.display = "block";
+              }
+            }
+            else {
+              item.style.display = "none";
+            }
+          }
+
+          items = document.getElementsByClassName("main-option");
+          for (item of items) {
+            var category = item.dataset.category;
+            if (filterCategory == category) {
+              item.classList.add("active");
+            }
+            else {
+              item.classList.remove("active");
+            }
+          }
+
+        }
+
+        // Update all the basic profile information from character information stored
+        function updateProfileDescription(updateForm = false) {
+          var charInfo = document.getElementById("character_info");
+          var field = document.getElementById("profile_user_name");
+          field.innerHTML = charInfo.dataset.username;
+
+          field = document.getElementById("profile_occupation");
+          field.innerHTML = charInfo.dataset.occupation;
+
+          field = document.getElementById("profile_location");
+          field.innerHTML = charInfo.dataset.location;
+
+          field = document.getElementById("profile_education");
+          field.innerHTML = charInfo.dataset.education;
+
+          field = document.getElementById("profile_name");
+          field.innerHTML = charInfo.dataset.first_name + " " + charInfo.dataset.last_name;
+
+          field = document.getElementById("profile_description");
+          field.innerHTML = charInfo.dataset.description;
+
+          if (updateForm) {
+            field = document.getElementById("form_username");
+            field.setAttribute("value", charInfo.dataset.username);
+            field = document.getElementById("form_first_name");
+            field.setAttribute("value", charInfo.dataset.first_name);
+            field = document.getElementById("form_last_name");
+            field.setAttribute("value", charInfo.dataset.last_name);
+            field = document.getElementById("form_location");
+            field.setAttribute("value", charInfo.dataset.location);
+            field = document.getElementById("form_education");
+            field.setAttribute("value", charInfo.dataset.education);
+            field = document.getElementById("form_occupation");
+            field.setAttribute("value", charInfo.dataset.occupation);
+            field = document.getElementById("form_description");
+            field.setAttribute("value", charInfo.dataset.description);
+            field.value = charInfo.dataset.description;
+          }
+
+        }
+
+        function saveFormInfo() {
+          var charInfo = document.getElementById("character_info");
+          var field = document.getElementById("form_username");
+          if (field.value == "") {
+            console.log("Fail");
+            return;
+          }
+          field.setAttribute("value", field.value);
+          charInfo.dataset.username = field.getAttribute("value");
+
+          field = document.getElementById("form_description");
+          field.setAttribute("value", field.value);
+          charInfo.dataset.description = field.getAttribute("value");
+
+          field = document.getElementById("form_occupation");
+          field.setAttribute("value", field.value);
+          charInfo.dataset.occupation = field.getAttribute("value");
+
+          field = document.getElementById("form_location");
+          field.setAttribute("value", field.value);
+          charInfo.dataset.location = field.getAttribute("value");
+
+          field = document.getElementById("form_education");
+          field.setAttribute("value", field.value);
+          charInfo.dataset.education = field.getAttribute("value");
+
+          field = document.getElementById("form_first_name");
+          field.setAttribute("value", field.value);
+          charInfo.dataset.first_name = field.getAttribute("value");
+
+          field = document.getElementById("form_last_name");
+          field.setAttribute("value", field.value);
+          charInfo.dataset.last_name = field.getAttribute("value");
+        }
+
+
+        function updateProfileMode() {
+          var profile_header = document.getElementById("profile_header");
+          var charInfo = document.getElementById("character_info");
+          var inViewMode = (charInfo.dataset.profile_mode == "view");
+
+          if (inViewMode) {
+            filterSelection("");
+          }
+
+          if (profile_header) {
+            if (inViewMode) {
+              profile_header.innerHTML = "Profile";
+            }
+            else {
+              profile_header.innerHTML = "Avatar";
+            }
+          }
+          var main_options = document.getElementsByClassName("main-option");
+          for (main_option of main_options) {
+            if (inViewMode) {
+              main_option.style.display = "none";
+            }
+            else {
+              main_option.style.display = "block";
+            }
+          }
+
+          var main_infos = document.getElementsByClassName("main-info");
+          for (main_info of main_infos) {
+            if (inViewMode) {
+              main_info.style.display = "block";
+            }
+            else {
+              main_info.style.display = "none";
+            }
+          }
+
+
+          var profile_mode_button = document.getElementById("profile_mode");
+          if (inViewMode) {
+            profile_mode_button.innerHTML = "Edit Avatar"
+          }
+          else {
+            profile_mode_button.innerHTML = "Back to Profile"
+          }
+        }
+
+        var charInfo = document.getElementById("character_info");
+        if (charInfo) {
+          var profile_mode_button = document.getElementById("profile_mode");
+          profile_mode_button.addEventListener('click', function () {
+            if (charInfo.dataset.profile_mode == "view") {
+              charInfo.dataset.profile_mode = "edit";
+            }
+            else {
+              charInfo.dataset.profile_mode = "view";
+            }
+            //console.log(charInfo.dataset.profile_mode);
+            updateProfileMode();
+          });
+
+          var customize_avatar_button = document.getElementById("customize_avatar");
+          customize_avatar_button.addEventListener('click', function () {
+            if (charInfo.dataset.profile_mode == "view") {
+              charInfo.dataset.profile_mode = "edit";
+            }
+            else {
+              charInfo.dataset.profile_mode = "view";
+            }
+            //console.log(charInfo.dataset.profile_mode);
+            updateProfileMode();
+          });
+        }
+
+        var update_overview_btn = document.getElementById("update_overview_btn");
+        update_overview_btn.addEventListener('click', function () {
+          saveFormInfo();
+          updateProfileDescription(false);
+        });
+
+  // Disable form submissions if there are invalid fields
+        /*
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                var valid = false;
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                else
+                {
+                  valid = true;
+                }
+                form.classList.add('was-validated');
+                //event.preventDefault();
+                if (valid)
+                {
+                  console.log("Update personal info", event);
+                  //saveFormInfo();
+                  //updateProfileDescription(false);
+                }
+                return true;
+              }, false);
+            });
+          }, false);
+        })();
+        */
+
+      </script>
+
+      <script src="JsMaterialXGenShader.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "_Default_Avatar",
+        "personal_info": {
+            "first_name": "Default",
+            "last_name": "Avatar",
+            "username": "_Default_Avatar",
+            "education": "B. Sc. Avatar University",
+            "location": "Avatar Land",
+            "occupation": "Avatar Example",
+            "description": "Hi, I'm your friendly neighbourhood default avatar. Please feel free to modify me in any way you'd like and save off you profile and reload as at your convenience.",
+            "age": "0"
+        },
+        "avatar_properties": {
+            "char_uri": "models/default_avatar.gltf",
+            "char_material_uri": "models/default_avatar.gltf.mtlx",
+            "assign_shader_top": "plain",
+            "visible": "head,left_hand,right_hand,left_hand,left_arm,right_arm,shirt,bottom,left_eye_white,right_eye_white",
+            "mouth_visible": "neutral_mouth",
+            "eyebrows_visible": "neutral_eyebrows",
+            "eyes_visible": "right_large_eye,left_large_eye",
+            "hair_visible": "middle_part_hair_short",
+            "hair_shader": "0xE89E63",
+            "eyeball_shader": "0x000000",
+            "mouth_shader": "0xEB5757",
+            "skin_shader": "0xFFC782",
+            "bottom_shader": "0x000000",
+            "shirt_shader": "0x0E93FF",
+            "glasses_visible": "no_glasses",
+            "job_logo_visible": "",
+            "job_logo_shader": "0x000000"
+        }
+    }
+]

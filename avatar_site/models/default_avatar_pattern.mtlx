@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<materialx version="1.38" colorspace="lin_rec709">
+  <nodedef name="ND_checker" node="checker">
+    <input name="color1" type="color3" value="0.01, 0.01, 0.01" colorspace="srgb_texture"/>
+    <input name="base_color" type="color3" value="1, 1, 1" colorspace="srgb_texture"/>
+    <input name="repeatU" type="float" value="10" />
+    <input name="repeatV" type="float" value="10" />
+    <input name="moduloValue" type="float" value="2" />
+    <input name="uv_index" type="integer" value="0" />
+    <output name="out" type="color3" value="0, 0, 0" />
+  </nodedef>
+  <nodegraph name="NG_checker" nodedef="ND_checker">
+    <add name="add" type="float" nodedef="ND_add_float">
+      <input name="in1" type="float" nodename="floor1" />
+      <input name="in2" type="float" nodename="floor" />
+    </add>
+    <add name="add1" type="color3" nodedef="ND_add_color3">
+      <input name="in1" type="color3" nodename="multiply2" />
+      <input name="in2" type="color3" nodename="multiply3" />
+    </add>
+    <floor name="floor" type="float" nodedef="ND_floor_float">
+      <input name="in" type="float" nodename="multiply1" />
+    </floor>
+    <floor name="floor1" type="float" nodedef="ND_floor_float">
+      <input name="in" type="float" nodename="multiply" />
+    </floor>
+    <modulo name="modulo" type="float" nodedef="ND_modulo_float">
+      <input name="in1" type="float" nodename="add" />
+      <input name="in2" type="float" interfacename="moduloValue" value="2.57" />
+    </modulo>
+    <multiply name="multiply" type="float" nodedef="ND_multiply_float">
+      <input name="in1" type="float" interfacename="repeatU" value="100" />
+      <input name="in2" type="float" nodename="extract" />
+    </multiply>
+    <multiply name="multiply1" type="float" nodedef="ND_multiply_float">
+      <input name="in1" type="float" interfacename="repeatV" value="1" />
+      <input name="in2" type="float" nodename="extract1" />
+    </multiply>
+    <multiply name="multiply2" type="color3" nodedef="ND_multiply_color3FA">
+      <input name="in1" type="color3" interfacename="color1" value="0.01, 0.01, 0.01" />
+      <input name="in2" type="float" nodename="subtract" />
+    </multiply>
+    <multiply name="multiply3" type="color3" nodedef="ND_multiply_color3FA">
+      <input name="in1" type="color3" interfacename="base_color" value="0.8, 0.8, 0.8" />
+      <input name="in2" type="float" nodename="modulo" />
+    </multiply>
+    <subtract name="subtract" type="float" nodedef="ND_subtract_float">
+      <input name="in1" type="float" value="1" />
+      <input name="in2" type="float" nodename="modulo" />
+    </subtract>
+    <texcoord name="texcoord" type="vector2" nodedef="ND_texcoord_vector2">
+      <input name="index" type="integer" uniform="true" interfacename="uv_index" value="0" />
+    </texcoord>
+    <extract name="extract" type="float" nodedef="ND_extract_vector2">
+      <input name="in" type="vector2" nodename="texcoord" />
+    </extract>
+    <extract name="extract1" type="float" nodedef="ND_extract_vector2">
+      <input name="in" type="vector2" nodename="texcoord" />
+      <input name="index" type="integer" uniform="true" value="1" />
+    </extract>
+    <output name="out" type="color3" nodename="add1" />
+  </nodegraph>
+
+  <nodedef name="ND_simple_shader" node="simple_shader">
+    <input name="base_color" type="color3" value="0, 0.0, 0.0" colorspace="srgb_texture"/>
+    <input name="specular_anisotropy" type="float" value="0"/>
+    <output name="out" type="surfaceshader" value="" />
+  </nodedef>
+  <nodegraph name="NG_simple_shader" nodedef="ND_simple_shader">
+    <standard_surface name="color_shader" type="surfaceshader">
+      <input name="base" type="float" value="1" />
+      <input name="base_color" type="color3" interfacename="base_color" value="0.8, 0.8, 0.8" />
+      <input name="diffuse_roughness" type="float" value="0.307692" />
+      <input name="specular_roughness" type="float" value="0.54" />
+      <input name="specular_anisotropy" type="float" interfacename="specular_anisotropy" />
+      <input name="specular_IOR" type="float" value="1.5" />
+    </standard_surface>
+    <output name="out" type="surfaceshader" nodename="color_shader" />
+  </nodegraph>
+
+  <nodedef name="ND_checkershader_surfaceshader" node="checkershader">
+    <input name="base_color" type="color3" value="0.8, 0.8, 0.8" colorspace="srgb_texture"/>
+    <input name="file" type="filename" uniform="true" value="" />
+    <input name="repeatU" type="float" value="60" />
+    <input name="repeatV" type="float" value="24" />
+    <input name="moduloValue" type="float" value="2" />
+    <input name="normalmap_image" type="vector3" value="0.5, 0.5, 1.0" />
+    <input name="normalmap_scale" type="float" value="5" />
+    <output name="out" type="surfaceshader" value="" />
+  </nodedef>
+  <nodegraph name="NG_checkershader_surfaceshader" nodedef="ND_checkershader_surfaceshader">
+    <standard_surface name="sshader" type="surfaceshader">
+      <input name="base" type="float" value="1" />
+      <input name="base_color" type="color3" nodename="checker1" />
+      <input name="diffuse_roughness" type="float" value="0" />
+      <input name="metalness" type="float" value="0" />
+      <input name="specular" type="float" value="1" />
+      <input name="specular_roughness" type="float" value="0.7" />
+      <input name="specular_IOR" type="float" value="1.5" />
+      <input name="sheen" type="float" value="0.134615" />
+      <input name="sheen_roughness" type="float" value="0.3" />
+      <input name="normal" type="vector3" nodename="checker_normalmap" />
+    </standard_surface>
+    <checker name="checker1" type="color3" nodedef="ND_checker">
+      <input name="base_color" type="color3" interfacename="base_color" />
+      <input name="repeatU" type="float" interfacename="repeatU" />
+      <input name="repeatV" type="float" interfacename="repeatV"  />
+      <input name="moduloValue" type="float" interfacename="moduloValue" />
+    </checker>
+    <normalmap name="checker_normalmap" type="vector3">
+      <input name="in" type="vector3" interfacename="normalmap_image" />
+      <input name="scale" type="float" interfacename="normalmap_scale" value="1" />
+    </normalmap>
+    <output name="out" type="surfaceshader" nodename="sshader" />
+  </nodegraph>
+  
+  <simple_shader name="SHD_skin_shader" type="surfaceshader" nodedef="ND_simple_shader">
+    <input name="base_color" type="color3" value="1, 0.571124, 0.223228" />
+  </simple_shader>
+
+  <simple_shader name="SHD_job_logo_shader" type="surfaceshader" nodedef="ND_simple_shader" />
+
+  <simple_shader name="SHD_eyeball_shader" type="surfaceshader" nodedef="ND_simple_shader" />
+
+  <simple_shader name="SHD_eyesbrow_shader" type="surfaceshader" nodedef="ND_simple_shader">
+    <input name="base_color" type="color3" value="0.00200214, 0.000959987, 0.0125737" />
+  </simple_shader>
+
+  <simple_shader name="SHD_hair_shader" type="surfaceshader" nodedef="ND_simple_shader">
+    <input name="base_color" type="color3" value="0.806952, 0.341914, 0.124772" />
+    <input name="specular_anisotropy" type="float" value="0.8" />
+  </simple_shader>
+  
+  <simple_shader name="SHD_mouth_shader" type="surfaceshader" nodedef="ND_simple_shader">
+    <input name="base_color" type="color3" value="0.799103, 0.181164, 0.155927" />
+  </simple_shader>
+  
+  <simple_shader name="SHD_eye_shader" type="surfaceshader" nodedef="ND_simple_shader">
+    <input name="base_color" type="color3" value="0.8, 0.8, 0.8" />
+  </simple_shader>
+
+  <nodedef name="ND_bottom_shader_surfaceshader" node="bottom_shader">
+    <input name="base_color" type="color3" value="0.0298032, 0.0298032, 0.0298032" colorspace="srgb_texture"/>
+    <input name="normalmap_image" type="vector3" value="0.5, 0.5, 1.0" />
+    <output name="out" type="surfaceshader" value="" />
+  </nodedef>
+  <nodegraph name="NG_bottom_shader_surfaceshader" nodedef="ND_bottom_shader_surfaceshader">
+    <standard_surface name="SHD_bottom_shader1" type="surfaceshader">
+      <input name="base" type="float" value="1" />
+      <input name="base_color" type="color3" interfacename="base_color" value="0.0298032, 0.0298032, 0.0298032" colorspace="srgb_texture"/>
+      <input name="diffuse_roughness" type="float" value="0.307692" />
+      <input name="specular_roughness" type="float" value="0.369231" />
+      <input name="specular_IOR" type="float" value="1.5" />
+      <input name="transmission_extra_roughness" type="float" value="0" />
+      <input name="sheen" type="float" value="0.211538" />
+      <input name="sheen_roughness" type="float" value="0.3" />
+      <input name="normal" type="vector3" nodename="bottom_normalmap" />
+    </standard_surface>
+    <normalmap name="bottom_normalmap" type="vector3">
+      <input name="in" type="vector3" interfacename="normalmap_image" />
+      <input name="scale" type="float" value="3" />
+    </normalmap>
+    <output name="out" type="surfaceshader" nodename="SHD_bottom_shader1" />
+  </nodegraph>
+  <bottom_shader name="SHD_bottom_shader" type="surfaceshader" nodedef="ND_bottom_shader_surfaceshader">
+    <input name="base_color" type="color3" value="0.0298032, 0.0298032, 0.0298032" colorspace="srgb_texture"/>
+    <input name="normalmap_image" type="vector3" nodename="bottom_tiledimage" />
+  </bottom_shader>
+  <image name="bottom_tiledimage" type="vector3">
+    <input name="file" type="filename" uniform="true" value="../images/cloth_normal.png" />
+  </image>
+
+  <nodedef name="ND_shirt_shader_surfaceshader" nodename="shirt_shader">
+    <input name="base_color" type="color3" value="0.00439056, 0.332451, 1" colorspace="srgb_texture"/>
+    <input name="normalmap_image" type="vector3" value="0.5, 0.5, 1.0" />
+    <output name="out" type="surfaceshader" value="" />
+  </nodedef>
+  <nodegraph name="NG_shirt_shader_surfaceshader" nodedef="ND_shirt_shader_surfaceshader">
+    <standard_surface name="SHD_shirt_shader1" type="surfaceshader">
+      <input name="base" type="float" value="1" />
+      <input name="base_color" type="color3" interfacename="base_color" value="0.00439056, 0.332451, 1" colorspace="srgb_texture"/>
+      <input name="diffuse_roughness" type="float" value="0" />
+      <input name="metalness" type="float" value="0" />
+      <input name="specular" type="float" value="1" />
+      <input name="specular_roughness" type="float" value="0.7" />
+      <input name="specular_IOR" type="float" value="1.5" />
+      <input name="specular_anisotropy" type="float" value="0" />
+      <input name="sheen" type="float" value="0.134615" />
+      <input name="sheen_roughness" type="float" value="0.3" />
+      <input name="normal" type="vector3" nodename="cloth_normalmap" />
+    </standard_surface>
+    <normalmap name="cloth_normalmap" type="vector3">
+      <input name="in" type="vector3" interfacename="normalmap_image" />
+      <input name="scale" type="float" value="3" />
+    </normalmap>
+    <output name="out" type="surfaceshader" nodename="SHD_shirt_shader1" />
+  </nodegraph>
+  <shirt_shader name="SHD_shirt_shader" type="surfaceshader" nodedef="ND_shirt_shader_surfaceshader">
+    <input name="base_color" type="color3" value="0.00439056, 0.332451, 1" colorspace="srgb_texture"/>
+    <input name="normalmap_image" type="vector3" nodename="cloth_tiledimage" />
+  </shirt_shader>    
+  <image name="cloth_tiledimage" type="vector3">
+    <input name="file" type="filename" uniform="true" value="../images/cloth1_normal.png" />
+  </image>
+
+  <nodedef name="ND_pattern_shader" nodename="pattern_shader">
+    <input name="colormap_image" type="color3" value="1.0, 1.0, 1.0" colorspace="srgb_texture"/>
+    <input name="normalmap_image" type="vector3" value="0.5, 0.5, 1.0" colorspace="srgb_texture"/>
+    <output name="out" type="surfaceshader" value="" />
+  </nodedef>
+  <nodegraph name="NG_pattern_shader" nodedef="ND_pattern_shader">
+    <standard_surface name="SHD_pattern_shader1" type="surfaceshader">
+      <input name="base_color" type="color3" interfacename="colormap_image" colorspace="srgb_texture"/>
+      <input name="specular_roughness" type="float" value="0.7" />
+      <input name="normal" type="vector3" nodename="pattern_normalmap" />
+    </standard_surface>
+    <modulo name="modulo" type="color3" nodedef="ND_modulo_color3">
+      <input name="in1" type="color3" nodename="noise2d" />
+      <input name="in2" type="color3" value="2, 1.5, 4.2" />
+    </modulo>
+    <noise2d name="noise2d" type="color3" nodedef="ND_noise2d_color3">
+      <input name="amplitude" type="vector3" value="0.3, 3.6, 0.3" />
+      <input name="pivot" type="float" value="0.365385" />
+      <input name="texcoord" type="vector2" nodename="place2d" />
+    </noise2d>
+    <normalmap name="pattern_normalmap" type="vector3" nodedef="ND_normalmap">
+      <input name="in" type="vector3" interfacename="normalmap_image" />
+      <input name="scale" type="float" value="3" />
+    </normalmap>
+    <place2d name="place2d" type="vector2" nodedef="ND_place2d_vector2">
+      <input name="texcoord" type="vector2" nodename="texcoord" />
+      <input name="scale" type="vector2" value="0.02, 0.08" />
+    </place2d>
+    <texcoord name="texcoord" type="vector2" nodedef="ND_texcoord_vector2" />
+    <output name="out" type="surfaceshader" nodename="SHD_pattern_shader1" />
+  </nodegraph>
+
+  <pattern_shader name="SHD_pattern_shader" type="surfaceshader" nodedef="ND_pattern_shader">
+    <input name="colormap_image" type="color3" nodename="pattern_tiledimage" />
+    <input name="normalmap_image" type="vector3" nodename="pattern_tiledimage2" />
+  </pattern_shader>
+  <image name="pattern_tiledimage" type="color3">
+    <input name="file" type="filename" uniform="true" value="../images/Christmas.png" colorspace="srgb_texture"/>
+  </image>
+  <image name="pattern_tiledimage2" type="vector3">
+    <input name="file" type="filename" uniform="true" value="../images/cloth_normal.png" />
+  </image>
+
+  <checkershader name="SHD_checker_shirt_shader" type="surfaceshader" nodedef="ND_checkershader_surfaceshader" >
+    <input name="repeatU" type="float" value="60" />
+    <input name="repeatV" type="float" value="24" />
+    <input name="moduloValue" type="float" value="2.57" />
+    <input name="normalmap_image" type="vector3" nodename="checker_tiledimage" />
+    <input name="normalmap_scale" type="float" value="5" />
+  </checkershader>
+  <image name="checker_tiledimage" type="vector3">
+    <input name="file" type="filename" uniform="true"  value="../images/checkered_normal.png" />
+  </image>
+  
+  <checkershader name="SHD_stripe_shirt_shader" type="surfaceshader" nodedef="ND_checkershader_surfaceshader" >
+    <input name="repeatU" type="float" value="100" />
+    <input name="repeatV" type="float" value="1" />
+    <input name="moduloValue" type="float" value="2" />
+    <input name="normalmap_image" type="vector3" nodename="stripe_tiledimage" />
+    <input name="normalmap_scale" type="float" value="1" />
+  </checkershader>
+  <image name="stripe_tiledimage" type="vector3">
+    <input name="file" type="filename" uniform="true"  value="../images/striped_normal.png" />
+  </image>
+
+  <surfacematerial name="MAT_pattern_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_pattern_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_job_logo_shader" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_job_logo_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_bottom_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_bottom_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_skin_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_skin_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_shirt_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_shirt_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_hair_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_hair_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_eyesbrow_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_eyesbrow_shader" />
+  </surfacematerial>
+  <simple_shader name="SHD_glasses_shader" type="surfaceshader" nodedef="ND_simple_shader">
+    <input name="base_color" type="color3" value="0.0331047, 0.0331048, 0.0331048" />
+  </simple_shader>
+  <surfacematerial name="MAT_glasses_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_glasses_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_mouth_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_mouth_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_eyeball_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_eyeball_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_eye_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_eye_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_checker_shirt_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_checker_shirt_shader" />
+  </surfacematerial>
+  <surfacematerial name="MAT_stripe_shirt_shader" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="SHD_stripe_shirt_shader" />
+  </surfacematerial>
+
+  <look name="look1" >
+    <materialassign name="materialassign2" geom="avatar_body/head, avatar_body/left_hand, avatar_body/right_hand" material="MAT_skin_shader" />
+    <materialassign name="materialassign3" geom="avatar_face/large_eyes/left_large_eye, avatar_face/large_eyes/right_large_eye, avatar_face/small_eyes/left_small_eye, avatar_face/small_eyes/right_small_eye" material="MAT_eyeball_shader" />
+    <materialassign name="materialassign4" geom="avatar_face/glasses" material="MAT_glasses_shader" />
+    <materialassign name="materialassign6" geom="avatar_face/angry_eyebrows, avatar_face/neutral_eyebrows, avatar_face/surprised_eyebrows" material="MAT_eyesbrow_shader" />
+    <materialassign name="materialassign7" geom="avatar_body/middle_part_hair_long, avatar_body/middle_part_hair_short, avatar_body/side_part_hair_long, avatar_body/side_part_hair_short" material="MAT_hair_shader" />
+    <materialassign name="materialassign8" geom="avatar_face/happy_mouth, avatar_face/neutral_mouth, avatar_face/sad_mouth, avatar_face/shocked_mouth, avatar_face/surprised_mouth" material="MAT_mouth_shader" />
+    <materialassign name="materialassign9" geom="avatar_face/left_eye_white, avatar_face/right_eye_white" material="MAT_eye_shader" />
+    <materialassign name="materialassign10" geom="avatar_jobs/directions_logo, avatar_jobs/directions_logo_001, avatar_jobs/info_logo, avatar_jobs/shopping_logo" material="MAT_job_logo_shader" />
+    <materialassign name="dummyassign3" geom="" material="MAT_pattern_shader" />
+    <materialassign name="materialassign5" geom="avatar_body/left_arm, avatar_body/right_arm, avatar_body/shirt" material="MAT_shirt_shader" />
+    <materialassign name="materialassign1" geom="avatar_body/bottom" material="MAT_bottom_shader" />
+    <materialassign name="dummyassign" geom="" material="MAT_checker_shirt_shader" />
+    <materialassign name="dummyassign2" geom="" material="MAT_stripe_shirt_shader" />
+  </look>
+</materialx>

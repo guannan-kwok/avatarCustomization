@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "Maria_Lisa_Watts",
+        "personal_info": {
+            "first_name": "Maria Lisa",
+            "last_name": "Watts",
+            "username": "Maria_Lisa_Watts",
+            "education": "Master of Creation",
+            "location": "Munich, Germany",
+            "occupation": "Creative Consultant",
+            "description": "Hi I'm Maria Lisa I'm a super duper person.",
+            "age": "34"
+        },
+        "avatar_properties": {
+            "char_uri": "models/default_avatar.gltf",
+            "char_material_uri": "models/default_avatar.gltf.mtlx",
+            "assign_shader_top": "plain",
+            "visible": "head,left_hand,right_hand,left_hand,left_arm,right_arm,shirt,bottom,left_eye_white,right_eye_white",
+            "mouth_visible": "happy_mouth",
+            "eyebrows_visible": "angry_eyebrows",
+            "eyes_visible": "right_large_eye,left_large_eye",
+            "hair_visible": "middle_part_hair_long",
+            "hair_shader": "0xFFD95D",
+            "eyeball_shader": "0x0E93FF",
+            "mouth_shader": "0xEB5757",
+            "skin_shader": "0xFFC782",
+            "bottom_shader": "0x0E93FF",
+            "shirt_shader": "0xEB5757",
+            "glasses_visible": "no_glasses",
+            "job_logo_visible": "",
+            "job_logo_shader": "0x000000"
+        }
+    }
+]
