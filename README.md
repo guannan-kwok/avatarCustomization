@@ -31,4 +31,10 @@ The web prototype for the project can be viewed **[here](./avatar_site/index.htm
 |:-------------------------:|:-------------------------:|
 | <img src="https://cdn.myportfolio.com/1846b50444068c8131888dd7ddb68eb6/b243e738-f3b0-4482-a11f-d0f656744d32_rw_1920.png?h=09b229fc69c7bc416b166e416287aa32">  | <img src="https://cdn.myportfolio.com/1846b50444068c8131888dd7ddb68eb6/c89b95cd-fc02-43dd-80b9-b0003c07af0a_rw_1920.png?h=54a60f0922aac720fd54a576e34efb39"> |
 
+----
+<p>
+<a href="https://nanmucreative.com/">
+<img src="./images/logo.png" width=16px>&nbsp;&nbsp;&copy; NanMu Consulting 2022-2023</a>   
+</p>
+
 
