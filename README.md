@@ -13,30 +13,30 @@
 The primary goal of this project is to create avatars that represent different users within a shopping application. This is achieved by providing a variety of customization options which can be dynamically changed over time. This provides users with the ability to create their own personal brand through the avatars created.
 
 * Further details for this project can be found **[here](https://matthewkwok.myportfolio.com/digital-avatar-project).**
-* The AR Version of this project can be found **[here](https://matthewkwok.myportfolio.com/avatar-ar-project)**
-* The *Asset Library* can be found **[here](https://guannan-kwok.github.io/assetLibrary/assetLibrary.html)**
+* The <a href="https://guannan-kwok.github.io/assetLibrary/">Asset Library</a> describes the components of the avatar. 
 
-<!-- 
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script> 
+### Web Editor
 
-| | |
-|-|-|
-| <model-viewer disable-tap disable-pan style="background-color:grey; width: 32rem; height: 32rem" id="logo" ar interaction-prompt="none" camera-controls touch-action="pan-y" src="./avatar_site/models/ar_avatar.glb" shadow-intensity="1" camera-orbit="-23deg 80deg" alt="Kirby" poster="" skybox-image="./avatar_site/lights/san_giuseppe_bridge.hdr" environment-image="./avatar_site/lights/san_giuseppe_bridge.hdr" > </model-viewer> | <model-viewer disable-tap disable-pan style="background-color:grey; width: 32rem; height: 32rem" id="logo" ar interaction-prompt="none" camera-controls touch-action="pan-y" src="./avatar_site/models/default_avatar.glb" shadow-intensity="1" camera-orbit="-115deg 80deg" alt="Kirby" poster="" skybox-image="./avatar_site/lights/san_giuseppe_bridge.hdr" environment-image="./avatar_site/lights/san_giuseppe_bridge.hdr" > </model-viewer> |
--->
-
-### Implementation
-
-The web prototype for the project can be viewed **[here](./avatar_site/index.html)**
+The web based editor is available <a href="./avatar_site/index.html">here. Examples snapshots of the editor are shown below.
 
 | | |
 |:-------------------------:|:-------------------------:|
-| <img width=100%  src="https://cdn.myportfolio.com/1846b50444068c8131888dd7ddb68eb6/b243e738-f3b0-4482-a11f-d0f656744d32_rw_1920.png?h=09b229fc69c7bc416b166e416287aa32">  | <img width=100% src="https://cdn.myportfolio.com/1846b50444068c8131888dd7ddb68eb6/c89b95cd-fc02-43dd-80b9-b0003c07af0a_rw_1920.png?h=54a60f0922aac720fd54a576e34efb39"> |
+| <img width=100%  src="./images/avatar_editor_1.png">  | <img width=100% src="./images/avatar_editor_2.png"> |
 
-----
+</a>
+
+### AR Development
+
+An AR Version with enhanced interactive capabilities can be found **[here](https://matthewkwok.myportfolio.com/avatar-ar-project)**
+Examples of the associated glTF models are show below using the <a href="https://modelviewer.dev/" target="_blank">model-viewer" widgets</a>  
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script> 
+
+
+| | |
+|-|-|
+| <model-viewer auto-rotate disable-tap disable-pan style="background-color:grey; width: 24rem; height: 24rem" id="logo" ar camera-controls touch-action="pan-y" src="./models/ar_avatar.glb" shadow-intensity="1" camera-orbit="-23deg 80deg" alt="Avatar 1" poster="" skybox-image="" environment-image="./avatar_site/lights/san_giuseppe_bridge.hdr" > </model-viewer> | <model-viewer auto-rotate disable-tap disable-pan style="background-color:grey; width: 24rem; height: 24rem" id="logo" ar camera-controls touch-action="pan-y" src="./models/default_avatar.glb" shadow-intensity="1" camera-orbit="-115deg 80deg" alt="Avatar 2" poster="" skybox-image="" environment-image="./avatar_site/lights/san_giuseppe_bridge.hdr" > </model-viewer> |
+| <img src="https://cdn.myportfolio.com/1846b50444068c8131888dd7ddb68eb6/762e0f18-0059-42de-8764-9bc32948b8df.gif?h=cd34def11edf3105e38d1d629b257824" style="width: 24rem"> | <img src="https://cdn.myportfolio.com/1846b50444068c8131888dd7ddb68eb6/ca9e9674-fc62-434b-9014-138ff2df5aa8_rw_600.png?h=85d5cab100a185b7d611dc8b09bb99a9" style="width: 24rem"> |
+
 
 <!--End-->
-<p>
-<a href="https://nanmucreative.com/">
-<img src="./images/logo.png" width=16px>&nbsp;&nbsp;&copy; NanMu Consulting 2022-2023</a>   
-</p>
-
