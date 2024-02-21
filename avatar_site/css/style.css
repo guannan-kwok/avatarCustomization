@@ -1,5 +1,5 @@
 .nav-pills .nav-link.active {
-    background-color:rgb(102, 186, 238);
+    background-color: skyblue;
 }
 .nav-link-border {    
     box-sizing: border-box;
@@ -27,10 +27,10 @@
 
 .custom_colorbox
 {
-    min-width: 3em;
-    min-height: 3em;
-    width: 3em;
-    height: 3em; 
+    min-width: 1em;
+    min-height: 1em;
+    width: 2.5em;
+    height: 2.5em; 
 }
 
 /* If the screen size is 800px wide or less, set the font-size of <div> to 16px */
