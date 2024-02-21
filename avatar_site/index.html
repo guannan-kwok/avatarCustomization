@@ -6,22 +6,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <!--
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></script>
--->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-    crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.0/css/all.css">
+
   <!-- Css stylesheet-->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Custom CSS */
+    .asset {
+      padding: 0px;
+    }
+
+    .project {
+      /* font-weight: bold; */
+      padding: 10px;
+      text-align: center;
+    }
+
+
+    .dropdown-toggle {
+      text-decoration: none !important;
+    }
+
+    .no-underline {
+      text-decoration: none !important;
+    }
+
+    .navbar .navbar-nav {
+      margin-left: auto;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .social-icons {
+      list-style: none;
+      padding: 0;
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .social-icons li a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #333;
+      color: #fff;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid;
+    }
+
+    .article {
+      text-decoration: none;
+    }
+
+    .mermaid svg {
+      height: auto;
+    }
+
+    table,
+    th,
+    td {
+      border: 0px solid;
+    }
+  </style>
 
   <!-- Google fonts/icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -38,7 +103,9 @@
 <!-- style="background-image: url('images/blur1.png'); background-size: cover" -->
 <!--style="background: linear-gradient(to right, #fcfcfc, #99d2e8 40%, #04487c);"> -->
 
-<body style="background: url('images/blur4.png') no-repeat center center fixed; background-size: cover;">
+<!-- style="background: url('images/blur4.png') no-repeat center center fixed; background-size: cover;" -->
+
+<body>
 
   <div id="character_info" style="display: none" , data-id="Robert_Lee" , data-first_name="Robert" ,
     data-last_name="Lee" , data-username="Robert_Lee" , data-location="Toronto, Ontario" ,
@@ -53,166 +120,186 @@
     data-eyebrows_visible="neutral_eyebrows" , data-hair_visible="middle_part_hair_short" , data-hair_shader="0xE89E63"
     , data-eyeball_shader="0x000000" , data-mouth_shader="0xEB5757" , data-skin_shader="0xFFC782" ,
     data-bottom_shader="0x000000" , data-shirt_shader="0x0E93FF" , data-glasses_visible="no_glasses" ,
-    data-background_color="#87CEEB" , data-profile_mode="view">
+    data-background_color="#343C3B" , data-profile_mode="view">
   </div>
 
   <!-- Avatar Navbar-->
-  <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 shadow-sm" style="background-color: #EEEE">
-    <h1 id="profile_header" class="my-0 mr-md-auto text-dark font-weight-bold"></h1>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="../index.html">Home</a>
-      <!--
-      <a id="edit_settings" class="p-2 text-dark" data-toggle="modal" data-target="#settingsDialog">Settings</a>
-      -->
-      <a id="profile_mode" class="p-2 text-dark">Edit Avatar</a>
+  <nav class="navbar sticky-top navbar-expand-lg bg-dark-subtle" data-bs-theme="dark">
+    <div class="container-md container-fluid">
 
-      <a>|</a>
+      <a class="navbar-brand" href="../index.html">
+        <img src="./icons/Robert Lee Shirt.png" alt="MaterialX Learn" class="rounded d-inline-block align-text-center"
+          width="50px">
+        <!-- <div id="profile_header"></div> --> </img>
+      </a>
+      <button class="btn btn-outline-success navbar-brand">
+        <a id="profile_mode" class="nav-link active p-0 ">Edit Avatar</a>
+      </button>
+      <button class="btn btn-outline-success navbar-brand">
+        <a id="ar_avatar" class="nav-link active p-0 " href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank"
+          rel="noopener noreferrer">
+          Aero (AR)</a>
+      </button>
 
-      <!-- Link to Aero Version -->
-      <!-- Prototype 1 link 
-      <a href="https://adobeaero.app.link/goSW7CgqLub" target="_blank" rel="noopener noreferrer">
-        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a> -->
-      <!-- Prototype 2 link 
-      <a href="https://adobeaero.app.link/hwotnzR5Wub" target="_blank" rel="noopener noreferrer">
-        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>
-      -->  
-      <!-- Prototype 3 link 
-      <a href="https://adobeaero.app.link/uAJKFBODfvb" target="_blank" rel="noopener noreferrer">
-        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>
-      -->                  
-      <!-- Prototype 4 link -->
-      <a href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank" rel="noopener noreferrer">
-        <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>                    
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenuContent"
+        aria-controls="mainMenuContent" aria-expanded="false" aria-label="Toggle top menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!-- Facebook Share Button -->
-      <a class=" pl-2 fbtn share facebook"
-          target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fguannan-kwok.github.io%2FassetLibrary%2Favatar_site%2Findex.html&amp;src=sdkpreparse"><i
-          class="fa fa-facebook"></i></a>
+      <div class="collapse navbar-collapse" id="mainMenuContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-      <!-- Twitter Share Button -->
-      <a class="fbtn share twitter"
-          target="_blank" href="https://twitter.com/intent/tweet?text=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
-          class="fa fa-twitter"></i></a>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html" role="button">
+              Home
+            </a>
+          </li>
 
-      <!-- Pinterest Share Button -->
-      <a class="fbtn share pinterest"
-        target="_blank" href="http://pinterest.com/pin/create/button/?url=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
-          class="fa fa-pinterest"></i></a>
 
-      <!-- LinkedIn Share Button -->
-      <a class="fbtn share linkedin"
-          target="_blank" href="http://www.linkedin.com/shareArticle?url=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
-          class="fa fa-linkedin"></i></a>
+          <!-- Prototype 4 link -->
+          <li class="nav-item">
+            <a class="nav-link" role="button" href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank"
+              rel="noopener noreferrer">
+              <img src="icons/Adobe_Aero.svg" style="width: 22px"></a>
+          </li>
 
-    </nav>
-  </div>
+          <!-- Facebook Share Button -->
+          <li class="nav-item">
+            <a class="nav-link pl-2 fbtn share facebook" target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fguannan-kwok.github.io%2FassetLibrary%2Favatar_site%2Findex.html&amp;src=sdkpreparse"><i
+                class="fa fa-facebook"></i></a>
+          </li>
+
+          <!-- Twitter Share Button -->
+          <li class="nav-item">
+            <a class="nav-link fbtn share twitter" target="_blank"
+              href="https://twitter.com/intent/tweet?text=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
+                class="fa fa-twitter"></i></a>
+          </li>
+
+          <!-- Pinterest Share Button -->
+          <li class="nav-item">
+            <a class="nav-link fbtn share pinterest" target="_blank"
+              href="http://pinterest.com/pin/create/button/?url=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
+                class="fa fa-pinterest"></i></a>
+          </li>
+
+          <!-- LinkedIn Share Button -->
+          <li class="nav-item">
+            <a class="nav-link fbtn share linkedin" target="_blank"
+              href="http://www.linkedin.com/shareArticle?url=https://guannan-kwok.github.io/assetLibrary/avatar_site/index.html"><i
+                class="fa fa-linkedin"></i></a>
+          </li>
+
+
+      </div>
+  </nav>
 
   <!-- Customization Options (rows)-->
-  <div class="d-flex flex-column flex-md-row p-2 shadow-sm">
-    <div id="character_div" class="col-sm-6 mx-auto d-block align-items-stretch">
+  <div class="d-flex bg-dark flex-column flex-md-row p-2 shadow-sm">
+    <div id="character_div" class="p-2 col-sm-6 mx-auto d-block align-items-stretch"
+      style="background: url('images/blur4.png') no-repeat center center fixed; background-size: cover;">
 
       <!-- 3D character viewport -->
-      <canvas id="character_viewport" class="rounded mx-auto img-fluid d-block" tabindex="1" style="max-width:100%;"
+      <canvas id="character_viewport" class="rounded-top mx-auto img-fluid d-block" tabindex="1" style="max-width:100%;"
         data-tooltip2="3D rendering of avatar"></canvas>
       <!-- <div class="progress">
       <div id="progress_bar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div> -->
 
       <!-- Load and save profile and save canvas -->
-      <nav id="load_save_options" class="rounded nav flex-row flex-nowrap align-items-center justify-content-center"
-        style="background-color:white; opacity: 0.85">
-        <div class="col-sm-3">
+      <nav id="load_save_options"
+        class="p-0 rounded-bottom nav flex-row flex-nowrap align-items-center justify-content-center"
+        style="background-color:white; opacity: 1.0">
+        <div class="p-2 text-dark col-sm-3">
           <h4 id="profile_name"></h4>
         </div>
 
-        <div class="col-sm">
+        <div class="col-sm p-1">
           <label class="col-form-label">
             <input id="loadAvatar" type="file" accept=".json" style="display:none" />
-            <img class="img-fluid" src="icons/load2.svg" alt="Load Profile" style="transform: scale(1.0,1.0)">
-          </label>
-        </div>
-
-        <div class="col-sm">
-          <label class="col-form-label">
-            <img class="img-fluid" id="saveAvatar" src="icons/save2.svg" alt="Save Profile"
-              style="transform: scale(1,1)">
-          </label>
-        </div>
-        <div class="col-sm">
-          <label class="col-form-label">
-            <img class="img-fluid" id="saveCanvas" src="icons/screenshot2.svg" alt="Screen shot"
+            <img class="img-fluid custom_colorbox" src="icons/load2.svg" width=100% alt="Load Profile"
               style="transform: scale(1,1)">
           </label>
         </div>
 
-        <div class="col-sm">
+        <div class="col-sm p-1">
+          <label class="col-form-label">
+            <img class="img-fluid custom_colorbox" id="saveAvatar" src="icons/save2.svg" alt="Save Profile"
+              style="transform: scale(1,1)" width=100%>
+          </label>
+        </div>
+        <div class="col-sm p-1">
+          <label class="col-form-label">
+            <img class="img-fluid custom_colorbox" id="saveCanvas" src="icons/screenshot2.svg" alt="Screen shot"
+              style="transform: scale(1,1)" width=100%>
+          </label>
+        </div>
+
+        <div class="col-sm p-1">
           <a id="saveAvatarClick" style="display:none"></a>
           <label class="col-form-label">
-            <img id="playback" class="img-fluid" src="icons/Play2.svg" alt="Turntable" style="transform: scale(1,1)">
+            <img id="playback" class="custom_colorbox img-fluid" src="icons/Play2.svg" alt="Turntable"
+              style="transform: scale(1,1)" width=100%>
           </label>
         </div>
 
-        <div class="col-sm">
+        <div class="col-sm p-1">
           <label class="col-form-label">
-            <input id="background_color" type="color" class="custom_colorbox" />
-            <small></small>
+            <input id="background_color" type="color" class="custom_colorbox" width=100% />
           </label>
         </div>
       </nav>
 
     </div>
 
-    <div id="right_side_block" class="p-2 col-sm-6 mx auto d-block">
+    <div id="right_side_block" class="p-2 col-sm-6 mx-auto d-block align-items-stretch"
+      style="background: url('images/blur4.png') no-repeat center center fixed; background-size: cover;">
 
       <!-- <div class="d-flex align-items-center px-md-4 mb-3 bg-white border-bottom"> -->
-      <div class="row ml-0 d-flex">
+      <div class="row p-2 d-flex">
 
         <!---------------------------------------- Profile information items ------------------------------->
         <div class="container">
-          <div class="p-2 main-info rounded" style="background-color:white; opacity: 0.85">
-            <div class="ml-0 row main-info border-bottom col-sm" data-category="">
-              <p></p>
-              <h6>About</h6>
-              <small id="profile_description">
-              </small>
-              <p></p>
+          <div class="text-white p-2 main-info border border-white rounded-2" style="opacity: 0.9">
+            <div class="p-2 row main-info col-sm" data-category="">
+              <h5>About</h5>
+              <p id="profile_description">
+              </p>
+            </div>
+            <hr>
+
+            <div class="p-2 row main-info">
+              <div class="row col-sm">
+                <h5>Demographics</h5>
+              </div>
+              <div class="row">
+                <div id="profile_user_name"></div>
+              </div>
+              <div class="col-sm">
+                <div id="profile_occupation"></div>
+              </div>
+              <div class="col-sm">
+                <div id="profile_location"></div>
+              </div>
+              <div class="col-sm">
+                <div id="profile_education"></div>
+              </div>
             </div>
 
-            <div class="ml-0 row main-info col-sm">
-              <small>
-                <p></p>
-                <h6>Demographics</h6>
-                <div class="row col-sm">
-                  <div><b>Username: &nbsp;</b></div>
-                  <div id="profile_user_name"></div>
-                </div>
-                <div class="row col-sm">
-                  <b>Occupation: &nbsp;</b>
-                  <div id="profile_occupation"></div>
-                </div>
-                <div class="row col-sm">
-                  <b>City: &nbsp;</b>
-                  <div id="profile_location"></div>
-                </div>
-                <div class="row col-sm">
-                  <b>Education: &nbsp; </b>
-                  <div id="profile_education"></div>
-                </div>
-              </small>
-              <p></p>
-            </div>
-
+            <!--
             <div class="btn-group main-info" role="group" aria-label="Basic example">
               <button type="button" id="customize_avatar" class="btn btn-sm btn-primary">Edit Avatar</button>
               <a type="button" id="ar_avatar" class="btn btn-sm btn-success"
-              href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank" rel="noopener noreferrer">
-              View Avatar in Aero (AR)</a>
-            </div>            
+                href="https://adobeaero.app.link/8aUaBZEcrvb" target="_blank" rel="noopener noreferrer">
+                View Avatar in Aero (AR)</a>
+            </div>
+            -->
           </div>
 
           <!-- Avatar option items -->
           <nav id="top_options"
-            class="mr-2 rounded nav nav-pills flex-row flex-nowrap align-items-center justify-content-center border-bottom"
+            class="mr-2 rounded nav nav-pills flex-row flex-nowrap align-items-center justify-content-center"
             style="background-color: white; opacity: 0.85">
 
             <div class="nav-link nav-link-border active link-color main-option" data-category="overview"
@@ -255,14 +342,14 @@
 
           <!-- -------------------------------------------- Profile form --------------------------------------------  -->
 
-          <div class="container">
+          <div class="container" id="profile_form">
             <p></p>
-            <div class="row pr-2 ml-0 avatar_option" data-category="overview">
+            <div class="row pr-2 p-2 avatar_option" data-category="overview">
 
-              <form id="nav-overview" class="needs-validation text-light" novalidate>
+              <form id="nav-overview" class="p-0 needs-validation " novalidate>
 
                 <div class="form-group row">
-                  <label for="form_first_name" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
+                  <label for="form_first_name" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
                   <div class="col-sm-4">
                     <input type="text" class="form-control form-control-sm" id="form_first_name"
                       placeholder="First name" value="" required>
@@ -274,7 +361,7 @@
                 </div>
 
                 <div class="form-group row">
-                  <div class="col-sm-2">
+                  <div class="col-sm-3">
                     <label for="form_username" class="col-form-label col-form-label-sm">Username</label>
                   </div>
                   <div class="col-sm-9">
@@ -284,7 +371,7 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="form_location" class="col-sm-2 col-form-label col-form-label-sm">Location</label>
+                  <label for="form_location" class="col-sm-3 col-form-label col-form-label-sm">Location</label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control form-control-sm" id="form_location" placeholder="Location"
                       value="" required>
@@ -292,7 +379,7 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="form_education" class="col-sm-2 col-form-label col-form-label-sm">Education</label>
+                  <label for="form_education" class="col-sm-3 col-form-label col-form-label-sm">Education</label>
                   <div class="col-sm-9">
                     <input type="text" class="form-control form-control-sm" id="form_education" placeholder="Education"
                       value="" required>
@@ -301,7 +388,7 @@
 
 
                 <div class="form-group row">
-                  <div class="col-sm-2">
+                  <div class="col-sm-3">
                     <label for="form_occupation" class="col-form-label col-form-label-sm">Occupation</label>
                   </div>
                   <div class="col-sm-9">
@@ -311,7 +398,7 @@
                 </div>
 
                 <div class="form-group row">
-                  <label for="form_description" class="col-sm-2 col-form-label col-form-label-sm">About</label>
+                  <label for="form_description" class="col-sm-3 col-form-label col-form-label-sm">About</label>
                   <div class="col-sm-9">
                     <!-- <input type="text" class="form-control form-control-sm" id="form_description" placeholder="About"
                     value="invalid" required> -->
@@ -321,10 +408,8 @@
                   </div>
                 </div>
 
-                <div class="form-group row">
-                  <p></p>
-                  <p></p>
-                  <div class="col-sm-9">
+                <div class="form-group row pt-4">
+                  <div class="col-sm-12">
                     <button type="button" id="update_overview_btn" class="btn btn-primary btn-sm">Update
                       Profile</button>
                   </div>
@@ -334,7 +419,7 @@
           </div>
 
           <!-- -------------------------------------------- Hair options --------------------------------------------  -->
-          <div class="row ml-0 avatar_option" data-category="hair">
+          <div class="row p-2 avatar_option" data-category="hair">
             <nav id="nav-hair-style"
               class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
 
@@ -378,7 +463,7 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="hair">
+          <div class="row p-2 avatar_option" data-category="hair">
             <nav id="nav-hair-color"
               class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
 
@@ -427,7 +512,7 @@
           </div>
 
           <!-- -------------------------------------------- Eye options --------------------------------------------  -->
-          <div class="row ml-0 avatar_option" data-category="eyes">
+          <div class="row p-2 avatar_option" data-category="eyes">
             <h6 class="text-center font-weight-bold"></h6>
             <nav id="nav-eyes" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
 
@@ -467,7 +552,7 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="eyes">
+          <div class="row p-2 avatar_option" data-category="eyes">
             <h6 class="text-center font-weight-bold"></h6>
 
             <nav id="nav-eyebrow" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-start">
@@ -509,7 +594,7 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="eyes">
+          <div class="row p-2 avatar_option" data-category="eyes">
             <h6 class="text-center font-weight-bold"></h6>
 
             <nav id="nav-eyebrow" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-start">
@@ -554,9 +639,8 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="eyes">
-            <br>
-            <h6 class="text-left text-light font-weight-bold">Glasses</h6>
+          <div class="row p-2 avatar_option" data-category="eyes">
+            <h6 class="text-left  font-weight-bold">Glasses</h6>
 
             <nav id="nav-glasses" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-start">
 
@@ -595,7 +679,7 @@
           </div>
 
           <!-- -------------------------------------------- Mouth Options  --------------------------------------------  -->
-          <div class="row ml-0 avatar_option" data-category="mouth">
+          <div class="row p-2 avatar_option" data-category="mouth">
             <h6 class="text-center font-weight-bold"></h6>
 
             <nav id="nav-mouth" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
@@ -643,7 +727,7 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="mouth">
+          <div class="row p-2 avatar_option" data-category="mouth">
             <h6 class="text-center font-weight-bold"></h6>
 
             <nav id="nav-mouth-color"
@@ -687,8 +771,8 @@
 
           <!-- -------------------------------------------- Clothing Options  --------------------------------------------  -->
 
-          <div class="row ml-0 avatar_option" data-category="clothing">
-            <h6 class="text-center text-light font-weight-bold">Shirt</h6>
+          <div class="row p-2 avatar_option" data-category="clothing">
+            <h6 class="text-center  font-weight-bold">Shirt</h6>
 
             <nav id="nav-cloth-pattern"
               class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
@@ -729,7 +813,7 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="clothing">
+          <div class="row p-2 avatar_option" data-category="clothing">
             <h6 class="text-center font-weight-bold"></h6>
 
             <nav id="nav-cloth-color"
@@ -782,8 +866,8 @@
             </nav>
           </div>
 
-          <div class="row ml-0 avatar_option" data-category="clothing">
-            <h6 class="text-light text-center font-weight-bold">Pants</h6>
+          <div class="row p-2 avatar_option" data-category="clothing">
+            <h6 class=" text-center font-weight-bold">Pants</h6>
 
             <nav id="nav-bottom-color"
               class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
@@ -837,7 +921,7 @@
 
           <!-- -------------------------------------------- Employee Clothing Options  --------------------------------------------  -->
 
-          <div class="row ml-0 avatar_option" id="nav-logo-color" data-category="clothing">
+          <div class="row p-2 avatar_option" id="nav-logo-color" data-category="clothing">
             <h6 class="text-center font-weight-bold"> Logo Color</h6>
 
             <nav class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
@@ -889,7 +973,7 @@
 
           <!-- -------------------------------------------- Skin Options  --------------------------------------------  -->
 
-          <div class="row ml-0 avatar_option" data-category="skin">
+          <div class="row p-2 avatar_option" data-category="skin">
             <h6 class="text-center font-weight-bold"></h6>
 
             <nav id="nav-skin" class="nav nav-pills flex-row flex-nowrap align-items-center justify-content-center">
@@ -965,296 +1049,335 @@
         </div>
       </div>
 
-      <!-- -------------------------------------------- UI Logic  --------------------------------------------  -->
+    </div>
+  </div>
 
-      <script>
-        let employee_logo = new URLSearchParams(document.location.search).get("employee_logo");
-        if (!employee_logo) {
-          employee_logo = "";
-        }
-        //console.log("employee_logo: " + employee_logo);
-        var charInfo = document.getElementById("character_info");
-        if (charInfo) {
-          charInfo.dataset.job_logo_visible = employee_logo;
-        }
+  <div class="d-flex flex-column flex-md-row bg-dark-subtle footer text-white py-2 pt-2 " data-bs-theme="dark">
+    <div class="container d-fix">
+      <ul class="social-icons">
+        <button class="btn btn-outline" type="button">
+          <a href="https://github.com/kwokcb/MaterialX_Learn" target="_blank"><i class="fab fa-github fa-2x"
+              style="color: #ffffff;"></i></a>
+        </button>
+        <button class="btn btn-outline " type="button">
+          <a href="https://www.linkedin.com/in/bernard-kwok/" target="_blank"><i class="fab fa-linkedin-in fa-2x"
+              style="color: #0082ca;"></i></a>
+        </button>
+      </ul>
+      <p>&copy; 2022-2024 NanMu Consulting.</p>
+    </div>
+  </div>
 
-        updateProfileMode();
-        updateProfileDescription(true);
-        filterSelection("")
-        var charInfo = document.getElementById("character_info");
-        pickOption(charInfo.dataset.assign_shader_top, 'assign_shader_top');
-        pickOption(charInfo.dataset.mouth_visible, 'mouth_visible');
-        pickOption(charInfo.dataset.eyes_visible, 'eyes_visible');
-        pickOption(charInfo.dataset.glasses_visible, 'glasses_visible');
-        pickOption(charInfo.dataset.eyebrows_visible, 'eyebrows_visible');
-        pickOption(charInfo.dataset.hair_visible, 'hair_visible');
-        pickOption(charInfo.dataset.hair_shader, 'hair_shader');
-        pickOption(charInfo.dataset.shirt_shader, 'shirt_shader');
-        pickOption(charInfo.dataset.bottom_shader, 'bottom_shader');
-        pickOption(charInfo.dataset.skin_shader, 'skin_shader');
-        pickOption(charInfo.dataset.eyeball_shader, 'eyeball_shader');
-        pickOption(charInfo.dataset.mouth_shader, 'mouth_shader');
+  <!-- -------------------------------------------- UI Logic  --------------------------------------------  -->
 
-        function pickOption(choice, option) {
-          items = document.getElementsByClassName(option);
-          for (item of items) {
-            var item_category = item.dataset.category;
-            if (item_category == choice) {
-              item.classList.add("active");
-              if (item.dataset.needbackground) {
-                item.style.background = 'skyblue';
-                item.style.opacity = 1.0;
-              }
-            }
-            else {
-              item.classList.remove("active");
-              if (item.dataset.needbackground) {
-                item.style.background = 'white';
-                item.style.opacity = 0.85;
-              }
-            }
+  <script>
+    let employee_logo = new URLSearchParams(document.location.search).get("employee_logo");
+    if (!employee_logo) {
+      employee_logo = "";
+    }
+    //console.log("employee_logo: " + employee_logo);
+    var charInfo = document.getElementById("character_info");
+    if (charInfo) {
+      charInfo.dataset.job_logo_visible = employee_logo;
+    }
+
+    updateProfileMode();
+    updateProfileDescription(true);
+    filterSelection("")
+    var charInfo = document.getElementById("character_info");
+    pickOption(charInfo.dataset.assign_shader_top, 'assign_shader_top');
+    pickOption(charInfo.dataset.mouth_visible, 'mouth_visible');
+    pickOption(charInfo.dataset.eyes_visible, 'eyes_visible');
+    pickOption(charInfo.dataset.glasses_visible, 'glasses_visible');
+    pickOption(charInfo.dataset.eyebrows_visible, 'eyebrows_visible');
+    pickOption(charInfo.dataset.hair_visible, 'hair_visible');
+    pickOption(charInfo.dataset.hair_shader, 'hair_shader');
+    pickOption(charInfo.dataset.shirt_shader, 'shirt_shader');
+    pickOption(charInfo.dataset.bottom_shader, 'bottom_shader');
+    pickOption(charInfo.dataset.skin_shader, 'skin_shader');
+    pickOption(charInfo.dataset.eyeball_shader, 'eyeball_shader');
+    pickOption(charInfo.dataset.mouth_shader, 'mouth_shader');
+
+    function pickOption(choice, option) {
+      items = document.getElementsByClassName(option);
+      for (item of items) {
+        var item_category = item.dataset.category;
+        if (item_category == choice) {
+          item.classList.add("active");
+          if (item.dataset.needbackground) {
+            item.style.background = 'skyblue';
+            item.style.opacity = 1.0;
           }
-
-          var charInfo = document.getElementById("character_info");
-          if (charInfo) {
-            //console.log(">>> Change option: ", 'data-' + option, " to ",  choice);
-            charInfo.setAttribute('data-' + option, choice);
+        }
+        else {
+          item.classList.remove("active");
+          if (item.dataset.needbackground) {
+            item.style.background = 'white';
+            item.style.opacity = 0.85;
           }
         }
+      }
 
-        function filterSelection(filterCategory) {
-          var items, i;
-          items = document.getElementsByClassName("avatar_option");
-          for (item of items) {
-            var category = item.dataset.category;
-            if (filterCategory == category) {
-              if (item.id == "nav-logo-color") {
-                var charInfo = document.getElementById("character_info");
-                if (charInfo) {
-                  if (charInfo.dataset.job_logo_visible == "") {
-                    item.style.display = "none";
-                  }
-                  else {
-                    item.style.display = "block";
-                  }
-                }
+      var charInfo = document.getElementById("character_info");
+      if (charInfo) {
+        //console.log(">>> Change option: ", 'data-' + option, " to ",  choice);
+        charInfo.setAttribute('data-' + option, choice);
+      }
+    }
+
+    function filterSelection(filterCategory) {
+      var items, i;
+      items = document.getElementsByClassName("avatar_option");
+      for (item of items) {
+        var category = item.dataset.category;
+        if (filterCategory == category) {
+          if (item.id == "nav-logo-color") {
+            var charInfo = document.getElementById("character_info");
+            if (charInfo) {
+              if (charInfo.dataset.job_logo_visible == "") {
+                item.style.display = "none";
               }
               else {
                 item.style.display = "block";
               }
             }
-            else {
-              item.style.display = "none";
-            }
-          }
-
-          items = document.getElementsByClassName("main-option");
-          for (item of items) {
-            var category = item.dataset.category;
-            if (filterCategory == category) {
-              item.classList.add("active");
-            }
-            else {
-              item.classList.remove("active");
-            }
-          }
-
-        }
-
-        // Update all the basic profile information from character information stored
-        function updateProfileDescription(updateForm = false) {
-          var charInfo = document.getElementById("character_info");
-          var field = document.getElementById("profile_user_name");
-          field.innerHTML = charInfo.dataset.username;
-
-          field = document.getElementById("profile_occupation");
-          field.innerHTML = charInfo.dataset.occupation;
-
-          field = document.getElementById("profile_location");
-          field.innerHTML = charInfo.dataset.location;
-
-          field = document.getElementById("profile_education");
-          field.innerHTML = charInfo.dataset.education;
-
-          field = document.getElementById("profile_name");
-          field.innerHTML = charInfo.dataset.first_name + " " + charInfo.dataset.last_name;
-
-          field = document.getElementById("profile_description");
-          field.innerHTML = charInfo.dataset.description;
-
-          if (updateForm) {
-            field = document.getElementById("form_username");
-            field.setAttribute("value", charInfo.dataset.username);
-            field = document.getElementById("form_first_name");
-            field.setAttribute("value", charInfo.dataset.first_name);
-            field = document.getElementById("form_last_name");
-            field.setAttribute("value", charInfo.dataset.last_name);
-            field = document.getElementById("form_location");
-            field.setAttribute("value", charInfo.dataset.location);
-            field = document.getElementById("form_education");
-            field.setAttribute("value", charInfo.dataset.education);
-            field = document.getElementById("form_occupation");
-            field.setAttribute("value", charInfo.dataset.occupation);
-            field = document.getElementById("form_description");
-            field.setAttribute("value", charInfo.dataset.description);
-            field.value = charInfo.dataset.description;
-          }
-
-        }
-
-        function saveFormInfo() {
-          var charInfo = document.getElementById("character_info");
-          var field = document.getElementById("form_username");
-          if (field.value == "") {
-            console.log("Fail");
-            return;
-          }
-          field.setAttribute("value", field.value);
-          charInfo.dataset.username = field.getAttribute("value");
-
-          field = document.getElementById("form_description");
-          field.setAttribute("value", field.value);
-          charInfo.dataset.description = field.getAttribute("value");
-
-          field = document.getElementById("form_occupation");
-          field.setAttribute("value", field.value);
-          charInfo.dataset.occupation = field.getAttribute("value");
-
-          field = document.getElementById("form_location");
-          field.setAttribute("value", field.value);
-          charInfo.dataset.location = field.getAttribute("value");
-
-          field = document.getElementById("form_education");
-          field.setAttribute("value", field.value);
-          charInfo.dataset.education = field.getAttribute("value");
-
-          field = document.getElementById("form_first_name");
-          field.setAttribute("value", field.value);
-          charInfo.dataset.first_name = field.getAttribute("value");
-
-          field = document.getElementById("form_last_name");
-          field.setAttribute("value", field.value);
-          charInfo.dataset.last_name = field.getAttribute("value");
-        }
-
-
-        function updateProfileMode() {
-          var profile_header = document.getElementById("profile_header");
-          var charInfo = document.getElementById("character_info");
-          var inViewMode = (charInfo.dataset.profile_mode == "view");
-
-          if (inViewMode) {
-            filterSelection("");
-          }
-
-          if (profile_header) {
-            if (inViewMode) {
-              profile_header.innerHTML = "Profile";
-            }
-            else {
-              profile_header.innerHTML = "Avatar";
-            }
-          }
-          var main_options = document.getElementsByClassName("main-option");
-          for (main_option of main_options) {
-            if (inViewMode) {
-              main_option.style.display = "none";
-            }
-            else {
-              main_option.style.display = "block";
-            }
-          }
-
-          var main_infos = document.getElementsByClassName("main-info");
-          for (main_info of main_infos) {
-            if (inViewMode) {
-              main_info.style.display = "block";
-            }
-            else {
-              main_info.style.display = "none";
-            }
-          }
-
-
-          var profile_mode_button = document.getElementById("profile_mode");
-          if (inViewMode) {
-            profile_mode_button.innerHTML = "Edit Avatar"
           }
           else {
-            profile_mode_button.innerHTML = "Back to Profile"
+            item.style.display = "block";
           }
         }
-
-        var charInfo = document.getElementById("character_info");
-        if (charInfo) {
-          var profile_mode_button = document.getElementById("profile_mode");
-          profile_mode_button.addEventListener('click', function () {
-            if (charInfo.dataset.profile_mode == "view") {
-              charInfo.dataset.profile_mode = "edit";
-            }
-            else {
-              charInfo.dataset.profile_mode = "view";
-            }
-            //console.log(charInfo.dataset.profile_mode);
-            updateProfileMode();
-          });
-
-          var customize_avatar_button = document.getElementById("customize_avatar");
-          customize_avatar_button.addEventListener('click', function () {
-            if (charInfo.dataset.profile_mode == "view") {
-              charInfo.dataset.profile_mode = "edit";
-            }
-            else {
-              charInfo.dataset.profile_mode = "view";
-            }
-            //console.log(charInfo.dataset.profile_mode);
-            updateProfileMode();
-          });
+        else {
+          item.style.display = "none";
         }
+      }
 
-        var update_overview_btn = document.getElementById("update_overview_btn");
-        update_overview_btn.addEventListener('click', function () {
-          saveFormInfo();
-          updateProfileDescription(false);
-        });
+      items = document.getElementsByClassName("main-option");
+      for (item of items) {
+        var category = item.dataset.category;
+        if (filterCategory == category) {
+          item.classList.add("active");
+        }
+        else {
+          item.classList.remove("active");
+        }
+      }
 
-  // Disable form submissions if there are invalid fields
-        /*
-        (function() {
-          'use strict';
-          window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-              form.addEventListener('submit', function(event) {
-                var valid = false;
-                if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-                else
-                {
-                  valid = true;
-                }
-                form.classList.add('was-validated');
-                //event.preventDefault();
-                if (valid)
-                {
-                  console.log("Update personal info", event);
-                  //saveFormInfo();
-                  //updateProfileDescription(false);
-                }
-                return true;
-              }, false);
-            });
+    }
+
+    // Update all the basic profile information from character information stored
+    function updateProfileDescription(updateForm = false) {
+      var charInfo = document.getElementById("character_info");
+      var field = document.getElementById("profile_user_name");
+      field.innerHTML = "<b>Username:</b> " + charInfo.dataset.username;
+
+      field = document.getElementById("profile_occupation");
+      field.innerHTML = "<b>Occupation:</b>: &nbsp " + charInfo.dataset.occupation;
+
+      field = document.getElementById("profile_location");
+      field.innerHTML = "<b>Location:</b>: &nbsp " + charInfo.dataset.location;
+
+      field = document.getElementById("profile_education");
+      field.innerHTML = "<b>Education:</b>: &nbsp " + charInfo.dataset.education;
+
+      field = document.getElementById("profile_name");
+      field.innerHTML = charInfo.dataset.first_name + " " + charInfo.dataset.last_name;
+
+      field = document.getElementById("profile_description");
+      field.innerHTML = charInfo.dataset.description;
+
+      if (updateForm) {
+        field = document.getElementById("form_username");
+        field.setAttribute("value", charInfo.dataset.username);
+        field = document.getElementById("form_first_name");
+        field.setAttribute("value", charInfo.dataset.first_name);
+        field = document.getElementById("form_last_name");
+        field.setAttribute("value", charInfo.dataset.last_name);
+        field = document.getElementById("form_location");
+        field.setAttribute("value", charInfo.dataset.location);
+        field = document.getElementById("form_education");
+        field.setAttribute("value", charInfo.dataset.education);
+        field = document.getElementById("form_occupation");
+        field.setAttribute("value", charInfo.dataset.occupation);
+        field = document.getElementById("form_description");
+        field.setAttribute("value", charInfo.dataset.description);
+        field.value = charInfo.dataset.description;
+      }
+
+    }
+
+    function saveFormInfo() {
+      var charInfo = document.getElementById("character_info");
+      var field = document.getElementById("form_username");
+      if (field.value == "") {
+        console.log("Fail");
+        return;
+      }
+      field.setAttribute("value", field.value);
+      charInfo.dataset.username = field.getAttribute("value");
+
+      field = document.getElementById("form_description");
+      field.setAttribute("value", field.value);
+      charInfo.dataset.description = field.getAttribute("value");
+
+      field = document.getElementById("form_occupation");
+      field.setAttribute("value", field.value);
+      charInfo.dataset.occupation = field.getAttribute("value");
+
+      field = document.getElementById("form_location");
+      field.setAttribute("value", field.value);
+      charInfo.dataset.location = field.getAttribute("value");
+
+      field = document.getElementById("form_education");
+      field.setAttribute("value", field.value);
+      charInfo.dataset.education = field.getAttribute("value");
+
+      field = document.getElementById("form_first_name");
+      field.setAttribute("value", field.value);
+      charInfo.dataset.first_name = field.getAttribute("value");
+
+      field = document.getElementById("form_last_name");
+      field.setAttribute("value", field.value);
+      charInfo.dataset.last_name = field.getAttribute("value");
+    }
+
+
+    function updateProfileMode() {
+      var profile_header = document.getElementById("profile_header");
+      var charInfo = document.getElementById("character_info");
+      var inViewMode = (charInfo.dataset.profile_mode == "view");
+
+      if (inViewMode) {
+        filterSelection("");
+      }
+
+      if (profile_header) {
+        if (inViewMode) {
+          profile_header.innerHTML = "Profile";
+        }
+        else {
+          profile_header.innerHTML = "Avatar";
+        }
+      }
+      var main_options = document.getElementsByClassName("main-option");
+      for (main_option of main_options) {
+        if (inViewMode) {
+          main_option.style.display = "none";
+        }
+        else {
+          main_option.style.display = "block";
+        }
+      }
+
+      var main_infos = document.getElementsByClassName("main-info");
+      for (main_info of main_infos) {
+        if (inViewMode) {
+          main_info.style.display = "block";
+        }
+        else {
+          main_info.style.display = "none";
+        }
+      }
+
+
+      var profile_mode_button = document.getElementById("profile_mode");
+      if (inViewMode) {
+        profile_mode_button.innerHTML = "Edit Avatar"
+      }
+      else {
+        profile_mode_button.innerHTML = "View Profile"
+      }
+    }
+
+    var charInfo = document.getElementById("character_info");
+    if (charInfo) {
+      var profile_mode_button = document.getElementById("profile_mode");
+      profile_mode_button.addEventListener('click', function () {
+        if (charInfo.dataset.profile_mode == "view") {
+          charInfo.dataset.profile_mode = "edit";
+        }
+        else {
+          charInfo.dataset.profile_mode = "view";
+        }
+        //console.log(charInfo.dataset.profile_mode);
+        updateProfileMode();
+      });
+
+      var customize_avatar_button = document.getElementById("customize_avatar");
+      customize_avatar_button.addEventListener('click', function () {
+        if (charInfo.dataset.profile_mode == "view") {
+          charInfo.dataset.profile_mode = "edit";
+        }
+        else {
+          charInfo.dataset.profile_mode = "view";
+        }
+        //console.log(charInfo.dataset.profile_mode);
+        updateProfileMode();
+      });
+    }
+
+    var update_overview_btn = document.getElementById("update_overview_btn");
+    update_overview_btn.addEventListener('click', function () {
+      saveFormInfo();
+      updateProfileDescription(false);
+    });
+
+    // Disable form submissions if there are invalid fields
+    /*
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            var valid = false;
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            else
+            {
+              valid = true;
+            }
+            form.classList.add('was-validated');
+            //event.preventDefault();
+            if (valid)
+            {
+              console.log("Update personal info", event);
+              //saveFormInfo();
+              //updateProfileDescription(false);
+            }
+            return true;
           }, false);
-        })();
-        */
+        });
+      }, false);
+    })();
+    */
 
-      </script>
+  </script>
 
-      <script src="JsMaterialXGenShader.js"></script>
+  <script src="JsMaterialXGenShader.js"></script>
+
+  <script>
+    /* Setup the theme based on user preferences */
+    function setupTheme() {
+      const body = document.body;
+      // Check if the user has a preferred color scheme
+      const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      // Set the initial theme based on user preferences
+      if (prefersDarkMode) {
+        body.setAttribute('data-bs-theme', 'dark');
+      } else {
+        body.setAttribute('data-bs-theme', 'light');
+      }
+    }
+    setupTheme();
+  </script>
+
+
+
 
 </body>
 

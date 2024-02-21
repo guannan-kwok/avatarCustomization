@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <standard_surface name="_47408984_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0, 0, 0" />
+  </standard_surface>
+  <surfacematerial name="_47408984_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="_47408984_Shader" />
+  </surfacematerial>
+</materialx>

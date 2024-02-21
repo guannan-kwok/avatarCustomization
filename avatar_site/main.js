@@ -884,7 +884,7 @@ async function initialize()
     }
 
     var saveButton = document.getElementById("saveCanvas");
-    var backgroundOpacity = 0.3;
+    var backgroundOpacity = 1.0;
     saveButton.addEventListener('click', function() {
         takeScreenshot = true;
      });

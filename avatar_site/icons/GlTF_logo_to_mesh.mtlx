@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <standard_surface name="Curve_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_Shader" />
+  </surfacematerial>
+  <standard_surface name="Curve_001_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_001_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_001_Shader" />
+  </surfacematerial>
+  <standard_surface name="Curve_002_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_002_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_002_Shader" />
+  </surfacematerial>
+  <standard_surface name="Curve_003_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_003_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_003_Shader" />
+  </surfacematerial>
+  <standard_surface name="Curve_004_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_004_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_004_Shader" />
+  </surfacematerial>
+  <standard_surface name="Curve_005_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_005_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_005_Shader" />
+  </surfacematerial>
+  <standard_surface name="Curve_006_Shader" type="surfaceshader" nodedef="ND_standard_surface_surfaceshader">
+    <input name="base_color" type="color3" value="0.238398, 0.55834, 0.0512695" />
+  </standard_surface>
+  <surfacematerial name="Curve_006_Material" type="material" nodedef="ND_surfacematerial">
+    <input name="surfaceshader" type="surfaceshader" nodename="Curve_006_Shader" />
+  </surfacematerial>
+</materialx>
